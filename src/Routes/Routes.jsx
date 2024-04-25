@@ -3,6 +3,10 @@ import Root from "../Root/Root";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Shared/Login/Login";
 import Register from "../Pages/Shared/Register/Register";
+import AllTouristsSpots from "../Pages/AllTouristsSpots/AllTouristsSpots";
+import AddTouristsSpots from "../Pages/AddTouristsSpots/AddTouristsSpots";
+import MyList from "../Pages/MyList/MyList";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([ 
     { 
@@ -20,6 +24,18 @@ export const router = createBrowserRouter([
         {
             path:'/register',
             element:<Register></Register>
+        },
+        {
+            path:'/all-tourists-spot',
+            element:<AllTouristsSpots></AllTouristsSpots>
+        },
+        {
+            path:'/add-tourists-spot',
+            element:<PrivateRoute><AddTouristsSpots></AddTouristsSpots></PrivateRoute>
+        },
+        {
+            path:'/my-list',
+            element:<PrivateRoute><MyList></MyList></PrivateRoute>
         }
     ]
     }, 
