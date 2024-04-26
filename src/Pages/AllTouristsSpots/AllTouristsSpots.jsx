@@ -7,6 +7,7 @@ const AllTouristsSpots = () => {
   const allTouristData = useLoaderData();
   const [allTourist, setAllTourist] = useState(allTouristData);
   const [sortName, setSortName] = useState("Sort By(avg_cost)");
+  console.log(allTourist);
   const handleSortAscending = (target) => {
     console.log("ascending clicked");
     if (target === 1) {

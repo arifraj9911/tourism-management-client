@@ -27,8 +27,8 @@ const AddTouristsSpots = () => {
       travel_time,
       visitor,
       description,
-      user_email: user?.email,
-      user_name: user?.displayName,
+      email: user?.email,
+      name: user?.displayName,
     };
 
     console.log(tourist_spot_info);
