@@ -32,6 +32,21 @@ const AddTouristsSpots = () => {
     };
 
     console.log(tourist_spot_info);
+
+    fetch('http://localhost:5000/tourist-spots',{
+        method:"POST",
+        headers:{
+            'content-type':'application/json'
+        },
+        body:JSON.stringify(tourist_spot_info)
+    })
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data)
+        if(data.insertedId){
+            alert('data successfully added')
+        }
+    })
   };
   return (
     <div className="w-1/2 p-8  mx-auto my-20 border-2">
