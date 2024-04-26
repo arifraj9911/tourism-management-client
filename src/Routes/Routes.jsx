@@ -8,11 +8,13 @@ import AddTouristsSpots from "../Pages/AddTouristsSpots/AddTouristsSpots";
 import MyList from "../Pages/MyList/MyList";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import SpotViewDetails from "../Pages/SpotViewDetails/SpotViewDetails";
+import ErrorPage from "../ErrorPage/ErrorPage";
 
 export const router = createBrowserRouter([ 
     { 
     path: "/", 
     element: <Root></Root>, 
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
         {
             path:'/',
