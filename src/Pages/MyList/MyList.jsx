@@ -5,6 +5,22 @@ const MyList = () => {
   const { user } = useContext(AuthContext);
   const [touristSpot, setTouristSpot] = useState([]);
 
+  const handleDeleteItem = (id) => {
+    console.log("delete item ", id);
+    fetch(`http://localhost:5000/my-list/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.deletedCount > 0) {
+          alert("Item delete Successfully");
+          const remaining = touristSpot.filter((spots) => spots._id !== id);
+          setTouristSpot(remaining);
+        }
+      });
+  };
+
   useEffect(() => {
     fetch(`http://localhost:5000/my-list/${user?.email}`)
       .then((res) => res.json())
@@ -37,7 +53,12 @@ const MyList = () => {
                     <button className="btn btn-accent">Update</button>
                   </td>
                   <td>
-                    <button className="btn btn-secondary">Delete</button>
+                    <button
+                      onClick={() => handleDeleteItem(spot._id)}
+                      className="btn btn-secondary"
+                    >
+                      Delete
+                    </button>
                   </td>
                 </div>
               </tr>
