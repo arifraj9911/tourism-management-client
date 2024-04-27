@@ -1,11 +1,18 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { CgProfile } from "react-icons/cg";
+import { IoMoon, IoSunny } from "react-icons/io5";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [dark, setDark] = useState(false);
   const navigate = useNavigate();
+
+  const darkModeHandler = () => {
+    setDark(!dark);
+    document.body.classList.toggle("dark");
+  };
   const menu = (
     <>
       <li className="">
@@ -23,7 +30,7 @@ const Header = () => {
     </>
   );
   return (
-    <div className="navbar bg-white sticky top-0 z-10">
+    <div className="navbar bg-white dark:bg-black dark:text-white sticky top-0 z-10">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -49,7 +56,7 @@ const Header = () => {
             {menu}
           </ul>
         </div>
-        <Link to="/" className="btn btn-ghost text-xl">
+        <Link to="/" className="btn btn-ghost  text-xl">
           Travelenture
         </Link>
       </div>
@@ -57,6 +64,16 @@ const Header = () => {
         <ul className="menu menu-horizontal px-4">{menu}</ul>
       </div>
       <div className="navbar-end">
+        {/* dark/light theme */}
+        <button className="mr-5" onClick={() => darkModeHandler()}>
+          {
+            dark && <IoSunny className="text-3xl" />
+          }
+          {
+            !dark && <IoMoon className="text-3xl" />
+          }
+        </button>
+        {/* button */}
         {user ? (
           <span className="flex items-center gap-3 lg:gap-4">
             {" "}
