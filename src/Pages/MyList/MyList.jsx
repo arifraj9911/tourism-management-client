@@ -4,8 +4,9 @@ import { AuthContext } from "../provider/AuthProvider";
 const MyList = () => {
   const { user, setLoading } = useContext(AuthContext);
   const [touristSpot, setTouristSpot] = useState([]);
+  const [updatedSpot, setUpdatedSpot] = useState(null);
   const [updateId, setUpdateId] = useState(null);
-  //   console.log(updateId);
+  // console.log(updatedSpot);
 
   const handleDeleteItem = (id) => {
     console.log("delete item ", id);
@@ -98,7 +99,10 @@ const MyList = () => {
                 <div className="flex justify-center">
                   <td>
                     <label
-                      onClick={() => setUpdateId(spot._id)}
+                      onClick={() => {
+                        setUpdateId(spot._id);
+                        setUpdatedSpot(spot);
+                      }}
                       htmlFor="booking-modal"
                       className="btn btn-accent"
                     >
@@ -141,64 +145,100 @@ const MyList = () => {
             >
               <div className=" flex justify-center gap-6 ">
                 <div className="flex flex-col gap-4 w-full">
-                  <input
-                    type="text"
-                    name="spot_name"
-                    placeholder="tourist spot name"
-                    className="input input-bordered w-full"
-                  />
-                  <input
-                    type="text"
-                    name="image"
-                    placeholder="image url"
-                    className="input input-bordered w-full"
-                  />
-                  <input
-                    type="text"
-                    name="country_name"
-                    placeholder="country name"
-                    className="input input-bordered w-full"
-                  />
-                  <input
-                    type="text"
-                    name="location"
-                    placeholder="Location"
-                    className="input input-bordered w-full"
-                  />
-                  <input
-                    type="text"
-                    name="season"
-                    placeholder="seasonality"
-                    className="input input-bordered w-full"
-                  />
+                  <div className="space-y-2">
+                    <label className="font-bold">Tourists Spot Name</label>
+                    <input
+                      type="text"
+                      name="spot_name"
+                      defaultValue={updatedSpot?.spot_name}
+                      placeholder="tourist spot name"
+                      className="input input-bordered w-full"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="font-bold">Image URL</label>
+                    <input
+                      type="text"
+                      name="image"
+                      defaultValue={updatedSpot?.image}
+                      placeholder="image url"
+                      className="input input-bordered w-full"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="font-bold">Country Name</label>
+                    <input
+                      type="text"
+                      name="country_name"
+                      defaultValue={updatedSpot?.country_name}
+                      placeholder="country name"
+                      className="input input-bordered w-full"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="font-bold">Location</label>
+                    <input
+                      type="text"
+                      name="location"
+                      defaultValue={updatedSpot?.location}
+                      placeholder="Location"
+                      className="input input-bordered w-full"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="font-bold">Seasonality</label>
+                    <input
+                      type="text"
+                      name="season"
+                      defaultValue={updatedSpot?.season}
+                      placeholder="seasonality"
+                      className="input input-bordered w-full"
+                    />
+                  </div>
                 </div>
                 <div className="flex flex-col gap-4 w-full">
-                  <input
-                    type="number"
-                    name="avg_cost"
-                    placeholder="average cost"
-                    className="input input-bordered w-full"
-                  />
-                  <input
-                    type="text"
-                    name="travel_time"
-                    placeholder="travel time"
-                    className="input input-bordered w-full"
-                  />
-                  <input
-                    type="number"
-                    name="visitor"
-                    placeholder="total visitors per year"
-                    className="input input-bordered w-full"
-                  />
-                  <textarea
-                    name="description"
-                    id=""
-                    placeholder="short description"
-                    cols="20"
-                    rows="4"
-                    className="border rounded-lg px-3 py-2 w-full"
-                  ></textarea>
+                  <div className="space-y-2">
+                    <label className="font-bold">Average Cost</label>
+                    <input
+                      type="number"
+                      name="avg_cost"
+                      defaultValue={updatedSpot?.avg_cost}
+                      placeholder="average cost"
+                      className="input input-bordered w-full"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="font-bold">Travel Time</label>
+                    <input
+                      type="text"
+                      name="travel_time"
+                      defaultValue={updatedSpot?.travel_time}
+                      placeholder="travel time"
+                      className="input input-bordered w-full"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="font-bold">Total Visitors Per Year</label>
+                    <input
+                      type="number"
+                      name="visitor"
+                      defaultValue={updatedSpot?.visitor}
+                      placeholder="total visitors per year"
+                      className="input input-bordered w-full"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="font-bold">Description</label>
+                    <textarea
+                      name="description"
+                      defaultValue={updatedSpot?.description}
+                      id=""
+                      placeholder="short description"
+                      cols="20"
+                      rows="4"
+                      className="border rounded-lg px-3 py-2 w-full"
+                    ></textarea>
+                  </div>
                 </div>
               </div>
               <div className="w-full">

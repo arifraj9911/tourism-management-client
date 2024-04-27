@@ -66,12 +66,19 @@ const AddTouristsSpots = () => {
               placeholder="image url"
               className="input input-bordered w-full"
             />
-            <input
+            {/* <input
               type="text"
               name="country_name"
               placeholder="country name"
               className="input input-bordered w-full"
-            />
+            /> */}
+            <select className="border px-3 py-3 w-full  rounded-lg border-gray-300" name="country_name" id="">
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="Thailand">Thailand</option>
+              <option value="Malaysia">Malaysia</option>
+              <option value="Bangkok">Bangkok</option>
+              <option value="Indonesia">Indonesia</option>
+            </select>
             <input
               type="text"
               name="location"
