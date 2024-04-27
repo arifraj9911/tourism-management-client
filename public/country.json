@@ -1,0 +1,33 @@
+[
+    {
+      "country_name": "Bangladesh",
+      "image": "https://i.ibb.co/JB4v6Ls/bangladesh.jpg",
+      "description": "Bangladesh, known for its lush greenery and bustling cities, is a land of vibrant culture and history. From the Sundarbans mangrove forest to the ancient ruins of Paharpur, there's a wealth of experiences to discover in this South Asian gem."
+    },
+    {
+      "country_name": "Thailand",
+      "image": "https://i.ibb.co/YW2QxXP/Thailand-1.jpg",
+      "description": "Thailand, with its golden temples, tropical beaches, and bustling markets, is a traveler's paradise. From the vibrant street food scene in Bangkok to the serene beauty of Chiang Mai, there's something for everyone in the Land of Smiles."
+    },
+    {
+      "country_name": "Indonesia",
+      "image": "https://i.ibb.co/QkSyKQL/indonesia-1.jpg",
+      "description": "Indonesia, an archipelago of stunning islands, is a melting pot of cultures and landscapes. From the lush jungles of Bali to the pristine beaches of Komodo Island, it offers a diverse array of experiences for adventurers and beach lovers alike."
+    },
+    {
+      "country_name": "Malaysia",
+      "image": "https://i.ibb.co/bmDDh1L/malaysia-1.jpg",
+      "description": "Malaysia, home to bustling cities and lush rainforests, is a tapestry of diverse cultures and natural wonders. From the iconic Petronas Twin Towers in Kuala Lumpur to the breathtaking landscapes of Borneo, it's a country of contrasts waiting to be explored."
+    },
+    {
+      "country_name": "Vietnam",
+      "image": "https://i.ibb.co/J7B5hPL/vietnam-1.jpg",
+      "description": "Vietnam, with its stunning landscapes and rich history, offers a captivating blend of tradition and modernity. From the ancient town of Hoi An to the bustling streets of Ho Chi Minh City, there's no shortage of adventures to be had in this Southeast Asian gem."
+    },
+    {
+      "country_name": "Cambodia",
+      "image": "https://i.ibb.co/GCXfzVj/combodia-1.jpg",
+      "description": "Cambodia, home to the awe-inspiring temples of Angkor Wat, is a land of ancient wonders and vibrant culture. From the bustling markets of Phnom Penh to the tranquil shores of Koh Rong, it's a country that enchants visitors with its beauty and charm."
+    }
+  ]
+  

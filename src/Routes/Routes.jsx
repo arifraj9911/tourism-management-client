@@ -9,6 +9,7 @@ import MyList from "../Pages/MyList/MyList";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import SpotViewDetails from "../Pages/SpotViewDetails/SpotViewDetails";
 import ErrorPage from "../ErrorPage/ErrorPage";
+import CountrySpot from "../Pages/CountrySpot/CountrySpot";
 
 export const router = createBrowserRouter([ 
     { 
@@ -46,6 +47,11 @@ export const router = createBrowserRouter([
             path:'/all-tourist-spot/:id',
             element:<PrivateRoute><SpotViewDetails></SpotViewDetails></PrivateRoute>,
             loader:({params})=>fetch(`http://localhost:5000/tourist-spots/${params.id}`)
+        },
+        {
+            path:'/country-spots/:country_name',
+            element:<CountrySpot></CountrySpot>,
+            loader:({params})=>fetch(`http://localhost:5000/country/${params.country_name}`)
         }
     ]
     }, 
