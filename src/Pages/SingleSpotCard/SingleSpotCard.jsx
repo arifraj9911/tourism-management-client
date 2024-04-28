@@ -23,7 +23,7 @@ const SingleSpotCard = ({ spots }) => {
       <figure className="h-[300px]">
         <img className="w-full h-full" src={image} alt="Shoes" />
       </figure>
-      <span className="absolute bg-[#C40C0C] font-light text-white  left-4 top-4 px-3 py-2">
+      <span className="absolute bg-[#35374B] font-light text-white  left-4 top-4 px-3 py-1">
         {country_name}
       </span>
       <div className="card-body flex-grow p-5">

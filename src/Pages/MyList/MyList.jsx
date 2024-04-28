@@ -1,5 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import { FaPencilAlt } from "react-icons/fa";
+import { RiDeleteBin6Fill } from "react-icons/ri";
+import { IoLocationOutline } from "react-icons/io5";
 
 const MyList = () => {
   const { user, setLoading } = useContext(AuthContext);
@@ -79,23 +82,28 @@ const MyList = () => {
       <div className="overflow-x-auto ">
         <table className="table text-center">
           {/* head */}
-          <thead>
+          <thead className="bg-[#35374B] text-white text-xl">
             <tr>
-              <th>ID</th>
-              <th>Spot Name</th>
-              <th>Average Cost</th>
-              <th>@Email</th>
+              <th>SN</th>
+              <th>Spot</th>
+              <th>Country</th>
+              <th className="flex  items-center">
+                <IoLocationOutline />
+                <span>Location</span>
+              </th>
+              <th>$Average Cost</th>
               <th>Action</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="text-lg bg-[#F3F3F3] font-semibold">
             {/* row 1 */}
             {touristSpot.map((spot, idx) => (
               <tr key={spot._id}>
                 <th>{idx + 1}</th>
                 <td>{spot?.spot_name}</td>
-                <td>{spot?.avg_cost}</td>
-                <td>{spot?.email}</td>
+                <td>{spot?.country_name}</td>
+                <td>{spot?.location}</td>
+                <td>${spot?.avg_cost}</td>
                 <div className="flex justify-center">
                   <td>
                     <label
@@ -104,17 +112,17 @@ const MyList = () => {
                         setUpdatedSpot(spot);
                       }}
                       htmlFor="booking-modal"
-                      className="btn btn-accent"
+                      className=""
                     >
-                      Update
+                      <FaPencilAlt className="bg-[#333A73] text-white text-5xl p-3 rounded-md" />
                     </label>
                   </td>
                   <td>
                     <button
                       onClick={() => handleDeleteItem(spot._id)}
-                      className="btn btn-secondary"
+                      className="bg-[#A0153E] text-white text-2xl p-3 rounded-md"
                     >
-                      Delete
+                      <RiDeleteBin6Fill />
                     </button>
                   </td>
                 </div>
@@ -128,14 +136,14 @@ const MyList = () => {
       <div>
         <input type="checkbox" id="booking-modal" className="modal-toggle" />
         <div className="modal modal-bottom sm:modal-middle">
-          <div className="modal-box">
+          <div className="modal-box bg-[#35374B] text-white">
             <label
               htmlFor="booking-modal"
               className="btn btn-sm btn-circle absolute right-2 top-2"
             >
               ✕
             </label>
-            <h3 className=" text-lg my-3">
+            <h3 className=" text-3xl font-bold my-3">
               Update Tourist Information:{" "}
               <span className="text-secondary font-bold">{name}</span>
             </h3>
@@ -152,7 +160,7 @@ const MyList = () => {
                       name="spot_name"
                       defaultValue={updatedSpot?.spot_name}
                       placeholder="tourist spot name"
-                      className="input input-bordered w-full"
+                      className="input input-bordered rounded-none text-black w-full"
                     />
                   </div>
                   <div className="space-y-2">
@@ -162,7 +170,7 @@ const MyList = () => {
                       name="image"
                       defaultValue={updatedSpot?.image}
                       placeholder="image url"
-                      className="input input-bordered w-full"
+                      className="input input-bordered rounded-none text-black w-full"
                     />
                   </div>
                   <div className="space-y-2">
@@ -172,7 +180,7 @@ const MyList = () => {
                       name="country_name"
                       defaultValue={updatedSpot?.country_name}
                       placeholder="country name"
-                      className="input input-bordered w-full"
+                      className="input input-bordered rounded-none text-black w-full"
                     />
                   </div>
                   <div className="space-y-2">
@@ -182,7 +190,7 @@ const MyList = () => {
                       name="location"
                       defaultValue={updatedSpot?.location}
                       placeholder="Location"
-                      className="input input-bordered w-full"
+                      className="input input-bordered rounded-none text-black w-full"
                     />
                   </div>
                   <div className="space-y-2">
@@ -192,7 +200,7 @@ const MyList = () => {
                       name="season"
                       defaultValue={updatedSpot?.season}
                       placeholder="seasonality"
-                      className="input input-bordered w-full"
+                      className="input input-bordered rounded-none text-black w-full"
                     />
                   </div>
                 </div>
@@ -204,7 +212,7 @@ const MyList = () => {
                       name="avg_cost"
                       defaultValue={updatedSpot?.avg_cost}
                       placeholder="average cost"
-                      className="input input-bordered w-full"
+                      className="input input-bordered rounded-none text-black w-full"
                     />
                   </div>
                   <div className="space-y-2">
@@ -214,7 +222,7 @@ const MyList = () => {
                       name="travel_time"
                       defaultValue={updatedSpot?.travel_time}
                       placeholder="travel time"
-                      className="input input-bordered w-full"
+                      className="input input-bordered rounded-none text-black w-full"
                     />
                   </div>
                   <div className="space-y-2">
@@ -224,7 +232,7 @@ const MyList = () => {
                       name="visitor"
                       defaultValue={updatedSpot?.visitor}
                       placeholder="total visitors per year"
-                      className="input input-bordered w-full"
+                      className="input input-bordered rounded-none text-black w-full"
                     />
                   </div>
                   <div className="space-y-2">
@@ -236,7 +244,7 @@ const MyList = () => {
                       placeholder="short description"
                       cols="20"
                       rows="4"
-                      className="border rounded-lg px-3 py-2 w-full"
+                      className=" rounded-none px-3 text-black border-none py-2 w-full"
                     ></textarea>
                   </div>
                 </div>
@@ -245,7 +253,7 @@ const MyList = () => {
                 <input
                   type="submit"
                   value="Update"
-                  className="bg-[#4d4c4c] text-[#d9d9d9] w-full border border-[#331A15] p-3 rounded-md mt-8 font-bold"
+                  className="bg-[#C40C0C] text-xl text-white w-full border  p-3  mt-8 font-bold border-none "
                 />
               </div>
             </form>

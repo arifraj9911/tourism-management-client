@@ -131,7 +131,7 @@ const AddTouristsSpots = () => {
           <input
             type="submit"
             value="Add Spots"
-            className="bg-[#C40C0C] text-xl text-[#d9d9d9] w-full border  p-3  mt-8 font-bold"
+            className="bg-[#C40C0C] text-xl text-white w-full border  p-3  mt-8 font-bold"
           />
         </div>
       </form>

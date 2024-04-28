@@ -29,7 +29,7 @@ const AllTouristsSpots = () => {
           <div
             tabIndex={0}
             role="button"
-            className="btn m-1 bg-[#C40C0C] text-white"
+            className="btn m-1 hover:bg-[#333A73] bg-[#35374B] text-white"
           >
             <span>{sortName && sortName}</span>
             {/* <span>Sort By(avg_cost)</span> */}
