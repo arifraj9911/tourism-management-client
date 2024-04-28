@@ -4,6 +4,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 import { useForm } from "react-hook-form";
+import { IoDocumentTextOutline } from "react-icons/io5";
+import { MdAlternateEmail, MdOutlineInsertPhoto } from "react-icons/md";
+import { RiLockPasswordLine } from "react-icons/ri";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -13,13 +16,17 @@ const Register = () => {
   const navigate = useNavigate();
   const onSubmit = (data) => {
     // e.preventDefault();
-    // console.log(data.email);
+    console.log(data);
     const name = data.name;
     const image = data.photo;
     const email = data.email;
     const password = data.password;
+    // const termsCondition = data;
 
-    // console.log(name,image);
+
+    
+
+    // console.log(termsCondition);
 
     createUser(email, password)
       .then((res) => {
@@ -46,48 +53,56 @@ const Register = () => {
   };
   return (
     <div className="flex justify-center items-center ">
-      <div className="w-full md:w-3/5 lg:w-2/6 shadow-xl  rounded-xl p-10 my-16">
-        <h2 className="text-3xl lg:text-4xl mb-8 text-center font-bold">
+      <div className="w-full md:w-3/5 lg:w-2/6 border p-10 my-16">
+        <h2 className="text-3xl lg:text-4xl mb-4 text-center font-normal">
           Create Account
         </h2>
-        <hr />
+        
         <form
-          className=" flex flex-col gap-4 mt-12 "
+          className=" flex flex-col gap-4 mt-8 "
           onSubmit={handleSubmit(onSubmit)}
         >
-          <div className="flex flex-col gap-1 text-[#403F3F]">
-            <label className="font-medium">Your Name</label>
+          <div className="flex items-center  border-b text-[#999]">
+            {/* <label className="font-medium">Your Name</label> */}
+            <IoDocumentTextOutline />
             <input
+            placeholder="Name"
               required
-              className="bg-[#F3F3F3] p-2 rounded-md outline-none "
+              className="bg-white w-full text-black rounded-none border-[#999] p-2  outline-none "
               type="text"
               {...register("name", { required: true, maxLength: 20 })}
             />
           </div>
-          <div className="flex flex-col gap-1 text-[#403F3F]">
-            <label className="font-medium">Your Email</label>
+          <div className="flex items-center border-b text-[#999]">
+            {/* <label className="font-medium">Your Email</label> */}
+            <MdAlternateEmail />
             <input
+            placeholder="Email"
               required
-              className="bg-[#F3F3F3] p-2 rounded-md outline-none "
+              className="bg-white text-black  rounded-none border-[#999] p-2  outline-none "
               type="email"
               {...register("email", { required: true })}
             />
           </div>
-          <div className="flex flex-col gap-1 text-[#403F3F]">
-            <label className="font-medium">Photo URL</label>
+          <div className="flex items-center border-b text-[#999]">
+            {/* <label className="font-medium">Photo URL</label> */}
+            <MdOutlineInsertPhoto />
             <input
+            placeholder="Photo URL"
               required
-              className="bg-[#F3F3F3] p-2 rounded-md outline-none "
+              className="bg-white text-black  rounded-none border-[#999] p-2  outline-none "
               type="text"
               {...register("photo", { required: true })}
             />
           </div>
-          <div className="flex flex-col gap-1 text-[#403F3F]">
-            <label className="font-medium">Password</label>
+          <div className="flex items-center border-b text-[#999]">
+            {/* <label className="font-medium">Password</label> */}
+            <RiLockPasswordLine />
             <div className="w-full relative">
               <input
+              placeholder="Password"
                 required
-                className="bg-[#F3F3F3] p-3 w-full rounded-md outline-none "
+                className="bg-white text-black  rounded-none border-[#999] p-3 w-full  outline-none "
                 type={showPass ? "text" : "password"}
                 {...register("password", {
                   pattern: {
@@ -105,15 +120,21 @@ const Register = () => {
               </span>
             </div>
 
-            <p className="text-sm text-red-500">{errors.password?.message}</p>
+            
           </div>
+          <p className="text-sm text-red-500 mb-2">{errors.password?.message}</p>
+          <div className="flex gap-2 item ">
 
-          <div className="mt-2">
-            <input
-              className="bg-[#0075FF] hover:bg-[#2264b0] text-white py-3 px-6 w-full rounded-md text-[16px] font-bold"
-              type="submit"
-              value="Register"
-            />
+              <input type="checkbox" name="check"  id="" />
+              <span className="">Accept Terms & Conditions!</span>
+            </div>
+
+          <div className="mt-0">
+          <input
+                className="bg-[#C40C0C]  text-white py-3 px-6 w-full  text-lg font-bold"
+                type="submit"
+                value="Register"
+              />
           </div>
         </form>
         <div className="text-center">
