@@ -33,38 +33,40 @@ const AddTouristsSpots = () => {
 
     console.log(tourist_spot_info);
 
-    fetch('http://localhost:5000/tourist-spots',{
-        method:"POST",
-        headers:{
-            'content-type':'application/json'
-        },
-        body:JSON.stringify(tourist_spot_info)
+    fetch("http://localhost:5000/tourist-spots", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(tourist_spot_info),
     })
-    .then(res=>res.json())
-    .then(data=>{
-        console.log(data)
-        if(data.insertedId){
-            alert('data successfully added')
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          alert("data successfully added");
         }
-    })
+      });
   };
   return (
-    <div className="w-1/2 p-8  mx-auto my-20 border-2">
-      <h2 className="text-2xl mb-10 text-center">Add Tourists Spots</h2>
-      <form onSubmit={handleAddForm}>
+    <div className=" p-8 bg-[#F3F3F3]  mx-auto py-20 border-2">
+      <h2 className="text-5xl mb-16 text-center font-bold">
+        Add Tourists Spots
+      </h2>
+      <form className="w-3/5 mx-auto" onSubmit={handleAddForm}>
         <div className=" flex justify-center gap-6 ">
           <div className="flex flex-col gap-4 w-full">
             <input
               type="text"
               name="spot_name"
               placeholder="tourist spot name"
-              className="input input-bordered w-full"
+              className="input input-bordered border-none focus:outline-none rounded-none w-full"
             />
             <input
               type="text"
               name="image"
               placeholder="image url"
-              className="input input-bordered w-full"
+              className="input input-bordered border-none focus:outline-none rounded-none w-full"
             />
             {/* <input
               type="text"
@@ -72,7 +74,11 @@ const AddTouristsSpots = () => {
               placeholder="country name"
               className="input input-bordered w-full"
             /> */}
-            <select className="border px-3 py-3 w-full  rounded-lg border-gray-300" name="country_name" id="">
+            <select
+              className="border-none px-3 py-3 w-full outline-none  rounded-none "
+              name="country_name"
+              id=""
+            >
               <option value="Bangladesh">Bangladesh</option>
               <option value="Thailand">Thailand</option>
               <option value="Malaysia">Malaysia</option>
@@ -83,13 +89,13 @@ const AddTouristsSpots = () => {
               type="text"
               name="location"
               placeholder="Location"
-              className="input input-bordered w-full"
+              className="input input-bordered border-none focus:outline-none rounded-none w-full"
             />
             <input
               type="text"
               name="season"
               placeholder="seasonality"
-              className="input input-bordered w-full"
+              className="input input-bordered border-none focus:outline-none rounded-none w-full"
             />
           </div>
           <div className="flex flex-col gap-4 w-full">
@@ -97,19 +103,19 @@ const AddTouristsSpots = () => {
               type="number"
               name="avg_cost"
               placeholder="average cost"
-              className="input input-bordered w-full"
+              className="input input-bordered border-none focus:outline-none rounded-none w-full"
             />
             <input
               type="text"
               name="travel_time"
               placeholder="travel time"
-              className="input input-bordered w-full"
+              className="input input-bordered border-none focus:outline-none rounded-none w-full"
             />
             <input
               type="number"
               name="visitor"
               placeholder="total visitors per year"
-              className="input input-bordered w-full"
+              className="input input-bordered focus:outline-none border-none rounded-none w-full"
             />
             <textarea
               name="description"
@@ -117,15 +123,15 @@ const AddTouristsSpots = () => {
               placeholder="short description"
               cols="20"
               rows="4"
-              className="border rounded-lg px-3 py-2 w-full"
+              className="border-none px-3 rounded-none outline-none py-2 w-full"
             ></textarea>
           </div>
         </div>
         <div>
           <input
             type="submit"
-            value="Add "
-            className="bg-[#4d4c4c] text-[#d9d9d9] w-full border border-[#331A15] p-3 rounded-md mt-8 font-bold"
+            value="Add Spots"
+            className="bg-[#C40C0C] text-xl text-[#d9d9d9] w-full border  p-3  mt-8 font-bold"
           />
         </div>
       </form>
