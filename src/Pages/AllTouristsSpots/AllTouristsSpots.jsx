@@ -22,13 +22,14 @@ const AllTouristsSpots = () => {
   };
   return (
     <div className="max-w-screen-xl mx-auto my-12">
-      <h2 className="text-2xl my-8">All Tourists Spots</h2>
+      <div className="flex items-center justify-between my-20">
+      <h2 className="text-4xl font-bold ">All Tourists Spots</h2>
       <div>
-        <div className="dropdown dropdown-bottom flex justify-center  mb-10 ">
+        <div className="dropdown dropdown-bottom flex justify-center  ">
           <div
             tabIndex={0}
             role="button"
-            className="btn m-1 bg-[#23BE0A] text-white"
+            className="btn m-1 bg-[#C40C0C] text-white"
           >
             <span>{sortName && sortName}</span>
             {/* <span>Sort By(avg_cost)</span> */}
@@ -48,6 +49,7 @@ const AllTouristsSpots = () => {
             </li>
           </ul>
         </div>
+      </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {allTourist.map((spot) => (
