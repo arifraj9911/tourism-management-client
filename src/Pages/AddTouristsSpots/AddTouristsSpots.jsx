@@ -49,7 +49,7 @@ const AddTouristsSpots = () => {
       });
   };
   return (
-    <div className=" p-8 bg-[#F3F3F3]  mx-auto py-20 border-2">
+    <div className=" p-8 bg-[#f6f6f6]  mx-auto py-20 my-10">
       <h2 className="text-5xl mb-16 text-center font-bold">
         Add Tourists Spots
       </h2>

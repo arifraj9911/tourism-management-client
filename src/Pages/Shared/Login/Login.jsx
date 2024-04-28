@@ -5,7 +5,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 
 
-import google from "../../../assets/Images/google.png";
+import google from "../../../assets/Images/google1.png";
 import github from "../../../assets/Images/github.png";
 import { MdAlternateEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";

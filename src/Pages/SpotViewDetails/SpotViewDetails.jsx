@@ -18,7 +18,7 @@ const SpotViewDetails = () => {
     season,
   } = spotDetailData;
   return (
-    <div className="max-w-screen-xl mx-auto my-10">
+    <div className="max-w-screen-xl mx-auto my-20">
       <div className="flex gap-10">
         <div className="w-2/5 relative">
           <img className="w-full h-[450px] rounded-lg" src={image} alt="" />
