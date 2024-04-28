@@ -19,11 +19,11 @@ const SingleSpotCard = ({ spots }) => {
     description,
   } = spots;
   return (
-    <div className="card w-96 bg-base-100 flex flex-col relative shadow-xl">
+    <div className="card rounded-none w-96 bg-base-100 flex flex-col relative shadow-xl">
       <figure className="h-[300px]">
         <img className="w-full h-full" src={image} alt="Shoes" />
       </figure>
-      <span className="absolute bg-[#C40C0C] font-light text-white rounded-lg left-4 top-4 px-3 py-2">
+      <span className="absolute bg-[#C40C0C] font-light text-white  left-4 top-4 px-3 py-2">
         {country_name}
       </span>
       <div className="card-body flex-grow p-5">
@@ -62,7 +62,7 @@ const SingleSpotCard = ({ spots }) => {
         <div className=" flex justify-end">
           <Link
             to={`/all-tourist-spot/${_id}`}
-            className="bg-[#C40C0C] text-white px-5 py-3 font-normal rounded-lg text-lg"
+            className="bg-[#C40C0C] text-white px-4 py-2 font-normal  text-lg"
           >
             View Details
           </Link>
