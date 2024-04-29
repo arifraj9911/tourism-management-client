@@ -9,7 +9,7 @@ import UsefulInformation from "../UsefulInformation/UsefulInformation";
 const Home = () => {
     const spotData = useLoaderData();
     return (
-        <div>
+        <div className="dark:bg-[#121212] dark:text-[#dbdbdb]">
             <Banner></Banner>
             <TouristSpots spotData={spotData}></TouristSpots>
             <Country></Country>

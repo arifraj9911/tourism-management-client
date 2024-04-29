@@ -53,8 +53,8 @@ const Register = () => {
       });
   };
   return (
-    <div className="flex justify-center items-center ">
-      <div className="w-full md:w-3/5 lg:w-2/6 border p-10 my-16">
+    <div className="flex justify-center items-center dark:bg-[#121212] dark:text-[#dbdbdb]">
+      <div className="w-full md:w-3/5 lg:w-2/6 border dark:bg-[#212121] dark:border-none p-10 my-16">
         <h2 className="text-3xl lg:text-4xl mb-6 text-center font-normal">
           Create Account
         </h2>
@@ -69,7 +69,7 @@ const Register = () => {
             <input
             placeholder="Name"
               required
-              className="bg-white w-full text-black rounded-none border-[#999] p-2  outline-none "
+              className="bg-white w-full dark:bg-[#212121] dark:text-[#dbdbdb] text-black rounded-none border-[#999] p-2  outline-none "
               type="text"
               {...register("name", { required: true, maxLength: 20 })}
             />
@@ -80,7 +80,7 @@ const Register = () => {
             <input
             placeholder="Email"
               required
-              className="bg-white text-black  rounded-none border-[#999] p-2  outline-none "
+              className="bg-white text-black dark:bg-[#212121] dark:text-[#dbdbdb]  rounded-none border-[#999] p-2  outline-none "
               type="email"
               {...register("email", { required: true })}
             />
@@ -91,7 +91,7 @@ const Register = () => {
             <input
             placeholder="Photo URL"
               required
-              className="bg-white text-black  rounded-none border-[#999] p-2  outline-none "
+              className="bg-white text-black dark:bg-[#212121] dark:text-[#dbdbdb] rounded-none border-[#999] p-2  outline-none "
               type="text"
               {...register("photo", { required: true })}
             />
@@ -103,7 +103,7 @@ const Register = () => {
               <input
               placeholder="Password"
                 required
-                className="bg-white text-black  rounded-none border-[#999] p-3 w-full  outline-none "
+                className="bg-white text-black dark:bg-[#212121] dark:text-[#dbdbdb] rounded-none border-[#999] p-3 w-full  outline-none "
                 type={showPass ? "text" : "password"}
                 {...register("password", {
                   pattern: {

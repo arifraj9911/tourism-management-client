@@ -17,7 +17,8 @@ const Country = () => {
   }, []);
 
   return (
-    <div className="my-20 max-w-screen-xl mx-auto flex flex-col items-center">
+    <div className="">
+      <div className="py-20 max-w-screen-xl mx-auto flex flex-col items-center">
       <h2 className="text-5xl mt-24 mb-5 font-bold ">Popular Destination</h2>
       <p className="w-3/5 mx-auto text-center text-[#999]">
       Discover the allure of our highly sought-after destination, where culture, adventure, and relaxation converge to create unforgettable memories for travelers worldwide.
@@ -31,6 +32,7 @@ const Country = () => {
           ></SingleCountry>
         ))}
       </div>
+    </div>
     </div>
   );
 };

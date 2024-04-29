@@ -19,7 +19,8 @@ const SpotViewDetails = () => {
     season,
   } = spotDetailData;
   return (
-    <div className="max-w-screen-xl mx-auto my-20">
+    <div className="dark:bg-[#121212] dark:text-[#dbdbdb]">
+      <div className="max-w-screen-xl  mx-auto py-20">
       <div className="flex gap-10">
         <div className="w-2/5 relative">
           <img className="w-full h-[520px] rounded-lg" src={image} alt="" />
@@ -70,12 +71,13 @@ const SpotViewDetails = () => {
                 <LuUser2 />
                 Total Visitors Per Year:
               </span>
-              <span className="font-semibold">{visitor}+</span>
+              <span className="font-semibold">{visitor}</span>
             </p>
             {/* <p>Total Visitors Per Year: <span>{visitor}</span>  </p> */}
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

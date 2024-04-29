@@ -21,8 +21,9 @@ const AllTouristsSpots = () => {
     }
   };
   return (
-    <div className="max-w-screen-xl mx-auto my-12">
-      <div className="flex items-center justify-between my-20">
+    <div className="dark:bg-[#121212] pb-20">
+      <div className="max-w-screen-xl mx-auto dark:bg-[#121212] dark:text-[#dbdbdb] py-12">
+      <div className="flex items-center justify-between mt-10 mb-20">
         <h2 className="text-4xl font-bold ">All Tourists Spots</h2>
         <div>
           <div className="dropdown dropdown-bottom flex justify-center  ">
@@ -39,7 +40,7 @@ const AllTouristsSpots = () => {
             </div>
             <ul
               tabIndex={0}
-              className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+              className="dropdown-content z-[1] dark:bg-[#212121] menu p-2 shadow bg-base-100 rounded-box w-52"
             >
               <li onClick={() => handleSortAscending(1)}>
                 <a>Avg Cost(ascending)</a>
@@ -60,6 +61,7 @@ const AllTouristsSpots = () => {
           ></AllSpotCard>
         ))}
       </div>
+    </div>
     </div>
   );
 };

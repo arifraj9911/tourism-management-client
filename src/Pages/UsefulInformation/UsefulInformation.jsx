@@ -3,7 +3,7 @@ import activites from "../../assets/Images/activites.jpg";
 
 const UsefulInformation = () => {
   return (
-    <div className="mb-20 max-w-screen-xl px-5 mx-auto flex flex-col items-center">
+    <div className="pb-20 max-w-screen-xl px-5 mx-auto flex flex-col items-center">
       <h2 className="text-5xl mt-20 mb-5 font-bold ">Useful Information</h2>
       <p className="w-3/5 mx-auto text-center mb-20 text-[#999]">
       Access valuable insights and advice to enhance your travel experience, covering everything from packing hacks to cultural etiquette, ensuring smooth and enjoyable journeys.

@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../provider/AuthProvider";
 import { CgProfile } from "react-icons/cg";
@@ -13,14 +13,21 @@ import "./Header.css";
 
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useState(localStorage.getItem("darkMode"));
   const navigate = useNavigate();
 
-  
+  useEffect(() => {
+    const isDarkMode = localStorage.getItem("darkMode") === "true";
+    setDark(isDarkMode);
+  }, []);
+
+  useEffect(() => {
+    document.body.classList.toggle("dark", dark);
+    localStorage.setItem("darkMode", dark);
+  }, [dark]);
 
   const darkModeHandler = () => {
-    setDark(!dark);
-    document.body.classList.toggle("dark");
+    setDark((prevMode) => !prevMode);
   };
   const menu = (
     <>
@@ -41,80 +48,82 @@ const Header = () => {
   return (
     <>
       {/* navbar top */}
-      <div className="navbar py-0 bg-base-100 max-w-screen-xl  mx-auto ">
-        <div className="flex-1 gap-10 text-[#94999f] ">
-          <div className="flex gap-1 items-center">
-            <IoCallOutline />
-            <span>+8897-32438-53</span>
+      <div className="dark:bg-[#121212]">
+        <div className="navbar py-0 bg-base-100 max-w-screen-xl dark:bg-[#121212] dark:text-white  mx-auto ">
+          <div className="flex-1 gap-10 text-[#94999f] dark:text-[#dbdbdb] ">
+            <div className="flex gap-1 items-center">
+              <IoCallOutline />
+              <span>+8897-32438-53</span>
+            </div>
+            <div className="flex gap-1 items-center">
+              <AiOutlineMail />
+              <span>{user?.email ? user?.email : "karif9514@gmail.com"}</span>
+            </div>
           </div>
-          <div className="flex gap-1 items-center">
-            <AiOutlineMail />
-            <span>{user?.email ? user?.email : "karif9514@gmail.com"}</span>
-          </div>
-        </div>
-        <div className="flex-none">
-          {/* dark/light theme */}
-          <button
-            className="pr-8  border-r-2"
-            onClick={() => darkModeHandler()}
-          >
-            {dark && <IoSunny className="text-2xl" />}
-            {!dark && <IoMoon className="text-2xl" />}
-          </button>
-          {/* button */}
-          <div className="pl-8 text-[#94999f]">
-            {user ? (
-              <span className="flex items-center gap-3 lg:gap-6">
-                <button
-                  onClick={() => {
-                    logOut();
-                    navigate("/login");
-                  }}
-                  className=" text-[16px] font-bold flex gap-1 items-center"
-                >
-                  <CiLogout />
-                  <span> Sign Out</span>
-                </button>{" "}
-                {user?.photoURL ? (
-                  <div
-                    data-tooltip-id="my-tooltip"
-                    data-tooltip-content={user?.displayName}
-                    className="avatar"
+          <div className="flex-none ">
+            {/* dark/light theme */}
+            <button
+              className="pr-8  border-r-2"
+              onClick={() => darkModeHandler()}
+            >
+              {dark && <IoSunny className="text-2xl" />}
+              {!dark && <IoMoon className="text-2xl" />}
+            </button>
+            {/* button */}
+            <div className="pl-8 text-[#94999f] dark:text-[#dbdbdb]">
+              {user ? (
+                <span className="flex items-center gap-3 lg:gap-6">
+                  <button
+                    onClick={() => {
+                      logOut();
+                      navigate("/login");
+                    }}
+                    className=" text-[16px] font-bold flex gap-1 items-center"
                   >
-                    <div className="w-8 lg:w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                      <img src={user?.photoURL} />
+                    <CiLogout />
+                    <span> Sign Out</span>
+                  </button>{" "}
+                  {user?.photoURL ? (
+                    <div
+                      data-tooltip-id="my-tooltip"
+                      data-tooltip-content={user?.displayName}
+                      className="avatar"
+                    >
+                      <div className="w-8 lg:w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                        <img src={user?.photoURL} />
+                      </div>
                     </div>
-                  </div>
-                ) : (
-                  <div className="tooltip" data-tip={user?.displayName}>
-                    <CgProfile className="text-4xl" />
-                  </div>
-                )}{" "}
-              </span>
-            ) : (
-              <div className="flex gap-6">
-                <Link
-                  className=" text-[16px] font-bold flex gap-1 items-center"
-                  to="/login"
-                >
-                  <IoIosLogIn />
-                  <span>Login</span>
-                </Link>
-                <Link
-                  className=" text-[16px] font-bold flex gap-1 items-center"
-                  to="/register"
-                >
-                  <SiGnuprivacyguard />
-                  <span>Register</span>
-                </Link>
-              </div>
-            )}
+                  ) : (
+                    <div className="tooltip" data-tip={user?.displayName}>
+                      <CgProfile className="text-4xl" />
+                    </div>
+                  )}{" "}
+                </span>
+              ) : (
+                <div className="flex gap-6">
+                  <Link
+                    className=" text-[16px] font-bold flex gap-1 items-center"
+                    to="/login"
+                  >
+                    <IoIosLogIn />
+                    <span>Login</span>
+                  </Link>
+                  <Link
+                    className=" text-[16px] font-bold flex gap-1 items-center"
+                    to="/register"
+                  >
+                    <SiGnuprivacyguard />
+                    <span>Register</span>
+                  </Link>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
       <hr />
       {/* navbar bottom */}
-      <div className="navbar py-5 px-20 bg-white dark:bg-black dark:text-white sticky top-0 z-10">
+      <div className="navbar py-5 px-20 bg-white dark:bg-[#212121] dark:text-white sticky top-0 z-10">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

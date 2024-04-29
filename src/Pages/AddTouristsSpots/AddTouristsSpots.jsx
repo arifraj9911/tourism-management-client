@@ -55,8 +55,9 @@ const AddTouristsSpots = () => {
       });
   };
   return (
-    <div className=" p-8 bg-[#f6f6f6]  mx-auto py-20 ">
-      <h2 className="text-5xl mb-16 text-center font-bold">
+   <div className="">
+     <div className=" p-8 bg-[#f6f6f6] dark:bg-[#121212] dark:text-black mx-auto py-20 ">
+      <h2 className="text-5xl mb-16 text-center dark:text-[#dbdbdb] font-bold">
         Add Tourists Spots
       </h2>
       <form className="w-3/5 mx-auto" onSubmit={handleAddForm}>
@@ -138,11 +139,12 @@ const AddTouristsSpots = () => {
           <input
             type="submit"
             value="Add Spots"
-            className="bg-[#C40C0C] text-xl text-white w-full border  p-3  mt-8 font-bold"
+            className="bg-[#C40C0C] text-xl dark:border-none text-white w-full border  p-3  mt-8 font-bold"
           />
         </div>
       </form>
     </div>
+   </div>
   );
 };
 

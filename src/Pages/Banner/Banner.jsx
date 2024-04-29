@@ -138,7 +138,7 @@ const Banner = () => {
           </div>
         </SwiperSlide>
       </Swiper>
-      <div className="flex shadow-lg rounded-badge justify-center bg-white items-center z-10 absolute bottom-[-60px] right-36 gap-8 border w-4/5 px-5 py-6 mx-auto">
+      <div className="flex shadow-lg rounded-badge justify-center dark:bg-[#212121] dark:text-[#dbdbdb] dark:border-none bg-white items-center z-10 absolute bottom-[-60px] right-36 gap-8 border w-4/5 px-5 py-6 mx-auto">
         <div className=" flex items-center gap-4 border-r-2 pr-6">
           <IoLocationOutline className="text-2xl text-[#94999f]" />
           <div className="flex flex-col justify-center items-start">
@@ -146,7 +146,7 @@ const Banner = () => {
             <select
               name="location"
               id=""
-              className=" outline-none pl-0 mt-1 border-0 text-[#535658]"
+              className=" outline-none pl-0 mt-1 dark:bg-[#212121] border-0 text-[#535658]"
             >
               <option value="Bangladesh">Bangladesh</option>
               <option value="Thailand">Thailand</option>
@@ -164,7 +164,7 @@ const Banner = () => {
             <select
               name="duration"
               id=""
-              className=" outline-none pl-0 mt-1 border-0 text-[#535658]"
+              className=" outline-none pl-0 dark:bg-[#212121] mt-1 border-0 text-[#535658]"
             >
               <option value="1 Day Tour">1 Day Tour</option>
               <option value="2-4 Day Tour">2-4 Day Tour</option>
@@ -206,8 +206,8 @@ const Banner = () => {
           </div>
         </div>
         <div className=" flex items-center gap-2">
-          <IoIosSearch className="text-xl mt-1 text-[#94999f]" />
-          <button className="text-xl text-[#484a4e]">Search</button>
+          <IoIosSearch className="text-xl mt-1 text-[#94999f] dark:text-[#dbdbdb]" />
+          <button className="text-xl text-[#484a4e] dark:text-[#dbdbdb]">Search</button>
         </div>
       </div>
     </div>

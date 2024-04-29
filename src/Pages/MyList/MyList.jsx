@@ -99,11 +99,12 @@ const MyList = () => {
       .then((data) => setTouristSpot(data));
   }, [user]);
   return (
-    <div className="w-3/4 mx-auto my-20">
+    <div className="dark:bg-[#121212] dark:text-[#dbdbdb]">
+      <div className="w-3/4 mx-auto dark:bg-[#121212] py-20">
       <div className="overflow-x-auto ">
         <table className="table text-center">
           {/* head */}
-          <thead className="bg-[#35374B] text-white text-xl">
+          <thead className="bg-[#35374B]  text-white text-xl">
             <tr>
               <th>SN</th>
               <th>Spot</th>
@@ -116,7 +117,7 @@ const MyList = () => {
               <th>Action</th>
             </tr>
           </thead>
-          <tbody className="text-lg bg-[#F3F3F3] font-semibold">
+          <tbody className="text-lg bg-[#F3F3F3] dark:bg-[#121212] font-semibold">
             {/* row 1 */}
             {touristSpot.map((spot, idx) => (
               <tr key={spot._id}>
@@ -281,6 +282,7 @@ const MyList = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };

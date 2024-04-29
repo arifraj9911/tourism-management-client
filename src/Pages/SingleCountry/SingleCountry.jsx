@@ -4,7 +4,7 @@ const SingleCountry = ({ country, handleCountry }) => {
   return (
     <div
       onClick={() => handleCountry(country_name)}
-      className=" w-96 bg-white  shadow-xl image-full"
+      className=" w-96 bg-white dark:bg-[#212121]  shadow-xl image-full"
     >
       <figure className="h-[300px]">
         <img className="w-full h-full" src={image} alt="Shoes" />

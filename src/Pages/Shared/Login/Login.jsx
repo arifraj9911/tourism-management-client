@@ -4,12 +4,11 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 
-
 import google from "../../../assets/Images/google1.png";
 import github from "../../../assets/Images/github.png";
 import { MdAlternateEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
-import {  toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const Login = () => {
   const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
@@ -62,9 +61,9 @@ const Login = () => {
       });
   };
   return (
-    <div>
-      <div className="flex justify-center items-center ">
-        <div className="w-full md:w-3/5 lg:w-2/6  border  p-10 mt-16">
+    <div className="dark:bg-[#121212] dark:text-[#dbdbdb]">
+      <div className="flex justify-center items-center  ">
+        <div className="w-full md:w-3/5 lg:w-2/6  border dark:bg-[#212121] dark:border-[#212121]  p-10 mt-16">
           <h2 className="text-3xl lg:text-4xl mb-8 text-center font-normal">
             Login
           </h2>
@@ -75,10 +74,10 @@ const Login = () => {
           >
             <div className="flex items-center  text-[#999]  border-b ">
               {/* <label className="font-medium">Your Email</label> */}
-              <MdAlternateEmail className=""/>
+              <MdAlternateEmail className="" />
               <input
                 placeholder="Email"
-                className="bg-white w-full text-black  rounded-none  p-2  outline-none "
+                className="bg-white dark:bg-[#212121] dark:text-[#dbdbdb] w-full text-black  rounded-none  p-2  outline-none "
                 type="email"
                 {...register("email", { required: true })}
               />
@@ -88,7 +87,7 @@ const Login = () => {
               <RiLockPasswordLine />
               <input
                 placeholder="Password"
-                className="bg-white  rounded-none  p-2  outline-none "
+                className="bg-white dark:bg-[#212121] dark:text-[#dbdbdb]  rounded-none  p-2  outline-none "
                 type={showPass ? "text" : "password"}
                 {...register("password")}
               />
@@ -100,7 +99,7 @@ const Login = () => {
               </span>
             </div>
             <p className="text-sm text-red-500 mb-2">{errors}</p>
-            
+
             <div className="flex justify-between">
               <div className="flex gap-2 item">
                 <input type="checkbox" name="remember" id="" />
@@ -131,18 +130,14 @@ const Login = () => {
           </div>
         </div>
       </div>
-      <div className="w-full md:w-3/5 lg:w-2/6 mx-auto mb-20 ">
-        <div className="divider my-6">OR</div>
+      <div className="w-full md:w-3/5  lg:w-2/6 mx-auto pb-20 ">
+        <div className="divider my-6 ">OR</div>
         <div className="flex justify-center gap-4 ">
           <button onClick={handleGoogleSubmit} className="">
-            
             <img src={google} alt="" />
-            
           </button>
           <button onClick={handleGithubSubmit} className="">
-            
             <img src={github} alt="" />
-            
           </button>
         </div>
       </div>
