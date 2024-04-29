@@ -15,13 +15,14 @@ const SpotViewDetails = () => {
     visitor,
     location,
     travel_time,
+    description,
     season,
   } = spotDetailData;
   return (
     <div className="max-w-screen-xl mx-auto my-20">
       <div className="flex gap-10">
         <div className="w-2/5 relative">
-          <img className="w-full h-[450px] rounded-lg" src={image} alt="" />
+          <img className="w-full h-[520px] rounded-lg" src={image} alt="" />
           <span className="absolute bg-[#35374B] font-light text-white  left-4 top-4 px-3 py-1">
             {country_name}
           </span>
@@ -38,20 +39,15 @@ const SpotViewDetails = () => {
               <span className="text-[#C40C0C] font-semibold">${avg_cost}</span> /avg
             </span>
           </div>
-          <hr className="my-8" />
+          <hr className="my-7" />
           <div>
             <span className="text-2xl font-normal ">Overview</span>
             <p className="mt-4 text-[#999]">
               {" "}
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia,
-              perspiciatis aut possimus harum molestiae porro impedit. Rem
-              deserunt officiis expedita explicabo cupiditate exercitationem,
-              ducimus aut tenetur voluptatem illo vitae ipsam hic nisi! Quo id
-              inventore eligendi repellat commodi, earum dolores reiciendis eum
-              officia voluptates quaerat facilis fugiat, delectus rerum impedit.
+              {description}
             </p>
           </div>
-          <hr className="my-8" />
+          <hr className="my-7" />
           <div className="space-y-2  w-2/5 ">
             <p className="flex justify-between">
               <span className="flex items-center gap-1">

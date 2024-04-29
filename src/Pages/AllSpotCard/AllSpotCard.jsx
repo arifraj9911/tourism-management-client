@@ -14,6 +14,7 @@ const AllSpotCard = ({ spot }) => {
     country_name,
     location,
     visitor,
+    description,
     travel_time,
     season,
   } = spot;
@@ -48,9 +49,14 @@ const AllSpotCard = ({ spot }) => {
               <span className="text-[#C40C0C]">${avg_cost}</span> /avg
             </div>
           </h2>
-          <p className="mt-6 font-semibold text-[#999]">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
-            illo accusamus nobis.{" "}
+          <p className="mt-6 text-[16px] font-semibold text-[#999]">
+            {description.slice(0, 60)} .....
+            <Link
+              to={`/all-tourist-spot/${_id}`}
+              className="text-[#C40C0C] font-light"
+            >
+              Read More
+            </Link>{" "}
           </p>
           <hr className="my-4" />
           <div className="flex items-center justify-between font-semibold text-[#999]">

@@ -249,7 +249,7 @@ const MyList = () => {
                   <div className="space-y-2">
                     <label className="font-bold">Total Visitors Per Year</label>
                     <input
-                      type="number"
+                      type="text"
                       name="visitor"
                       defaultValue={updatedSpot?.visitor}
                       placeholder="total visitors per year"

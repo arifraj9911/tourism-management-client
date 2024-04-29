@@ -88,8 +88,9 @@ const AddTouristsSpots = () => {
               <option value="Bangladesh">Bangladesh</option>
               <option value="Thailand">Thailand</option>
               <option value="Malaysia">Malaysia</option>
-              <option value="Bangkok">Bangkok</option>
+              <option value="Vietnam">Vietnam</option>
               <option value="Indonesia">Indonesia</option>
+              <option value="Cambodia">Cambodia</option>
             </select>
             <input
               type="text"
@@ -118,7 +119,7 @@ const AddTouristsSpots = () => {
               className="input input-bordered border-none focus:outline-none rounded-none w-full"
             />
             <input
-              type="number"
+              type="text"
               name="visitor"
               placeholder="total visitors per year"
               className="input input-bordered focus:outline-none border-none rounded-none w-full"

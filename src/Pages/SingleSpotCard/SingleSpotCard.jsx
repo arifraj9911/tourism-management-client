@@ -40,8 +40,13 @@ const SingleSpotCard = ({ spots }) => {
         </h2>
 
         <p className="mt-6 font-semibold text-[#999]">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis illo
-          accusamus nobis.{" "}
+          {description.slice(0, 60)} .....
+          <Link
+            to={`/all-tourist-spot/${_id}`}
+            className="text-[#C40C0C] font-light"
+          >
+            Read More
+          </Link>
         </p>
         <hr className="my-4" />
         <div className="flex items-center justify-between font-semibold text-[#999]">
