@@ -24,10 +24,24 @@ import { IoLocationOutline } from "react-icons/io5";
 import { IoIosSearch, IoMdArrowForward, IoMdTime } from "react-icons/io";
 // import { LuCalendarCheck2 } from "react-icons/lu";
 import { TbCalendarShare, TbCalendarX } from "react-icons/tb";
+import { useTypewriter } from "react-simple-typewriter";
 
 const Banner = () => {
   const [valueCheckIn, onChangeCheckIn] = useState(new Date());
   const [valueCheckIOut, onChangeCheckOut] = useState(new Date());
+
+  const [sliderText1] = useTypewriter({
+    words: ["Let The Journey Begin"],
+    loop: 2,
+  });
+  const [sliderText2] = useTypewriter({
+    words: ["Dive Into Unknown"],
+    loop: 3,
+  });
+  const [sliderText3] = useTypewriter({
+    words: ["Shake The Sunset"],
+    loop: 4,
+  });
 
   return (
     <div className="relative">
@@ -58,7 +72,7 @@ const Banner = () => {
                 className="max-w-2xl px-2 lg:px-0"
               >
                 <h1 className="mb-2 lg:mb-10 w-full text-[28px] lg:text-6xl font-bold">
-                  Let The Journey Begin
+                  {sliderText1}
                 </h1>
                 <p className="mb-5 text-xs leading-4 lg:leading-6 lg:text-[16px] ">
                   With a heart full of anticipation and a mind ready for
@@ -85,7 +99,7 @@ const Banner = () => {
                 className="max-w-2xl px-2 lg:px-0"
               >
                 <h1 className="mb-2 lg:mb-10 w-full text-[28px] lg:text-6xl font-bold">
-                  Dive into Unknown
+                  {sliderText2}
                 </h1>
                 <p className="mb-5 text-xs leading-4 lg:leading-6 lg:text-[16px] ">
                   Delve into uncharted territories, where every step is an
@@ -112,7 +126,7 @@ const Banner = () => {
                 className="max-w-2xl px-2 lg:px-0"
               >
                 <h1 className="mb-2 lg:mb-10 w-full text-[28px] lg:text-6xl font-bold">
-                  Shake the Sunset
+                  {sliderText3}
                 </h1>
                 <p className="mb-5 text-xs leading-4 lg:leading-6 lg:text-[16px] ">
                   Embrace the magic of dusk as you embark on a journey filled

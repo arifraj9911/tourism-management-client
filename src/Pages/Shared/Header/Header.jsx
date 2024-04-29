@@ -10,10 +10,13 @@ import { CiLogout } from "react-icons/ci";
 import { Tooltip } from "react-tooltip";
 
 import "./Header.css";
+
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
   const [dark, setDark] = useState(false);
   const navigate = useNavigate();
+
+  
 
   const darkModeHandler = () => {
     setDark(!dark);
