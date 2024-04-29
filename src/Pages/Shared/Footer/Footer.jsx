@@ -50,9 +50,9 @@ const Footer = () => {
           <h6 className="text-2xl mb-2 font-bold text-[#4f4f4f]">NewsLetter</h6>
           <div className="relative ">
             <input
-              type="text"
+              type="email"
               name=""
-              placeholder="message"
+              placeholder="email"
               className="input input-bordered bg-white border-none focus:outline-none text-black hover:bg-none  rounded-none"
               id=""
             />
@@ -61,9 +61,7 @@ const Footer = () => {
               Send
             </button>
           </div>
-          <span className="text-sm">
-            37% OFF for the first time registration
-          </span>
+          <span className="text-sm">Get your early updates & more</span>
         </nav>
       </footer>
       <footer className="footer footer-center p-4 bg-[#e7e7e7] text-base-content">

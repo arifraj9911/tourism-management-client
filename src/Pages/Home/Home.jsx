@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Banner from "../Banner/Banner";
 import TouristSpots from "../TouristSpots/TouristSpots";
 import Country from "../Country/Country";
+import Deals from "../Deals/Deals";
 
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
             <Banner></Banner>
             <TouristSpots spotData={spotData}></TouristSpots>
             <Country></Country>
+            <Deals></Deals>
         </div>
     );
 };
