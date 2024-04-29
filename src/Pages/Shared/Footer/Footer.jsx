@@ -52,7 +52,7 @@ const Footer = () => {
             <input
               type="email"
               name=""
-              placeholder="email"
+              placeholder="Email"
               className="input input-bordered bg-white border-none focus:outline-none text-black hover:bg-none  rounded-none"
               id=""
             />

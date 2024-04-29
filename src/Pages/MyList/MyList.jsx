@@ -3,6 +3,7 @@ import { AuthContext } from "../provider/AuthProvider";
 import { FaPencilAlt } from "react-icons/fa";
 import { RiDeleteBin6Fill } from "react-icons/ri";
 import { IoLocationOutline } from "react-icons/io5";
+import Swal from "sweetalert2";
 
 const MyList = () => {
   const { user, setLoading } = useContext(AuthContext);
@@ -12,19 +13,35 @@ const MyList = () => {
   // console.log(updatedSpot);
 
   const handleDeleteItem = (id) => {
-    console.log("delete item ", id);
-    fetch(`http://localhost:5000/my-list/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        if (data.deletedCount > 0) {
-          alert("Item delete Successfully");
-          const remaining = touristSpot.filter((spots) => spots._id !== id);
-          setTouristSpot(remaining);
-        }
-      });
+    // console.log("delete item ", id);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/my-list/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your file has been deleted.",
+                icon: "success",
+              });
+              const remaining = touristSpot.filter((spots) => spots._id !== id);
+              setTouristSpot(remaining);
+            }
+          });
+      }
+    });
   };
 
   const handleUpdateItem = (e) => {
@@ -52,7 +69,7 @@ const MyList = () => {
       description,
     };
 
-    console.log(tourist_spot_info);
+    // console.log(tourist_spot_info);
 
     fetch(`http://localhost:5000/my-list/${updateId}`, {
       method: "PUT",
@@ -65,7 +82,11 @@ const MyList = () => {
       .then((data) => {
         console.log(data);
         if (data.modifiedCount > 0) {
-          alert("updated item");
+          Swal.fire({
+            title: "Updated Successfully",
+            text: "Want to update more! click update button",
+            icon: "success",
+          });
           form.reset();
           setLoading(false);
         }
