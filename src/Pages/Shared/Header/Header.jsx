@@ -7,6 +7,8 @@ import { AiOutlineMail } from "react-icons/ai";
 import { IoIosLogIn } from "react-icons/io";
 import { SiGnuprivacyguard } from "react-icons/si";
 import { CiLogout } from "react-icons/ci";
+import { Tooltip } from "react-tooltip";
+
 import "./Header.css";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -36,8 +38,8 @@ const Header = () => {
   return (
     <>
       {/* navbar top */}
-      <div className="navbar py-0 bg-base-100 max-w-screen-xl  mx-auto">
-        <div className="flex-1 gap-10 text-[#94999f]">
+      <div className="navbar py-0 bg-base-100 max-w-screen-xl  mx-auto ">
+        <div className="flex-1 gap-10 text-[#94999f] ">
           <div className="flex gap-1 items-center">
             <IoCallOutline />
             <span>+8897-32438-53</span>
@@ -72,8 +74,9 @@ const Header = () => {
                 </button>{" "}
                 {user?.photoURL ? (
                   <div
-                    className="avatar tooltip tooltip-left tooltip-success"
-                    data-tip={user?.displayName}
+                    data-tooltip-id="my-tooltip"
+                    data-tooltip-content={user?.displayName}
+                    className="avatar"
                   >
                     <div className="w-8 lg:w-8 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                       <img src={user?.photoURL} />
@@ -195,6 +198,7 @@ const Header = () => {
           )}
         </div> */}
       </div>
+      <Tooltip place="left" id="my-tooltip" />
     </>
   );
 };

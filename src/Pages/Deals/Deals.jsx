@@ -1,4 +1,5 @@
-import deals from '../../assets/Images/deals.jpg'
+import deals from '../../assets/Images/deals.jpg';
+
 
 const Deals = () => {
     return (
@@ -12,6 +13,7 @@ const Deals = () => {
             <div className='w-2/4'>
                 <img src={deals} alt="" />
             </div>
+           
         </div>
     );
 };
