@@ -6,16 +6,16 @@ import { useState } from "react";
 const AllTouristsSpots = () => {
   const allTouristData = useLoaderData();
   const [allTourist, setAllTourist] = useState(allTouristData);
-  const [sortName, setSortName] = useState("Sort By(avg_cost)");
+  const [sortName, setSortName] = useState("SORT BY");
   console.log(allTourist);
   const handleSortAscending = (target) => {
     console.log("ascending clicked");
     if (target === 1) {
-      setSortName("Ascending");
+      setSortName("Avg Cost(ascending)");
       const result = [...allTourist].sort((a, b) => a.avg_cost - b.avg_cost);
       setAllTourist(result);
     } else if (target === 2) {
-      setSortName("Descending");
+      setSortName("Avg Cost(descending)");
       const result = [...allTourist].sort((a, b) => b.avg_cost - a.avg_cost);
       setAllTourist(result);
     }
@@ -23,33 +23,33 @@ const AllTouristsSpots = () => {
   return (
     <div className="max-w-screen-xl mx-auto my-12">
       <div className="flex items-center justify-between my-20">
-      <h2 className="text-4xl font-bold ">All Tourists Spots</h2>
-      <div>
-        <div className="dropdown dropdown-bottom flex justify-center  ">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn m-1 hover:bg-[#333A73] bg-[#35374B] text-white"
-          >
-            <span>{sortName && sortName}</span>
-            {/* <span>Sort By(avg_cost)</span> */}
-            <span>
-              <IoIosArrowDown />
-            </span>
+        <h2 className="text-4xl font-bold ">All Tourists Spots</h2>
+        <div>
+          <div className="dropdown dropdown-bottom flex justify-center  ">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn m-1 hover:bg-[#333A73] bg-[#35374B] text-white"
+            >
+              <span className="text-xl">{sortName && sortName}</span>
+              {/* <span>Sort By(avg_cost)</span> */}
+              <span>
+                <IoIosArrowDown />
+              </span>
+            </div>
+            <ul
+              tabIndex={0}
+              className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li onClick={() => handleSortAscending(1)}>
+                <a>Avg Cost(ascending)</a>
+              </li>
+              <li onClick={() => handleSortAscending(2)}>
+                <a>Avg Cost(descending)</a>
+              </li>
+            </ul>
           </div>
-          <ul
-            tabIndex={0}
-            className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            <li onClick={() => handleSortAscending(1)}>
-              <a>Ascending</a>
-            </li>
-            <li onClick={() => handleSortAscending(2)}>
-              <a>Descending</a>
-            </li>
-          </ul>
         </div>
-      </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {allTourist.map((spot) => (

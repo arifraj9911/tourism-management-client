@@ -9,6 +9,7 @@ import google from "../../../assets/Images/google1.png";
 import github from "../../../assets/Images/github.png";
 import { MdAlternateEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
+import {  toast } from "react-toastify";
 
 const Login = () => {
   const { signIn, googleSignIn, githubSignIn } = useContext(AuthContext);
@@ -28,11 +29,11 @@ const Login = () => {
         console.log(res.user);
         navigate(location?.state ? location.state : "/");
         setErrors("");
-        alert("user login successful");
+        toast.success("user login successful");
         reset();
       })
       .catch((err) => {
-        setErrors(err.message);
+        toast.error(err.message);
       });
   };
 
@@ -41,10 +42,10 @@ const Login = () => {
       .then((res) => {
         console.log(res.user);
         navigate(location?.state ? location.state : "/");
-        alert("user login successful");
+        toast.success("user login successful");
       })
       .catch((err) => {
-        alert(err.message);
+        toast.error(err.message);
       });
   };
 
@@ -54,10 +55,10 @@ const Login = () => {
       .then((res) => {
         console.log(res.user);
         navigate(location?.state ? location.state : "/");
-        alert("user login successful");
+        toast.success("user login successful");
       })
       .catch((err) => {
-        alert(err.message);
+        toast.error(err.message);
       });
   };
   return (

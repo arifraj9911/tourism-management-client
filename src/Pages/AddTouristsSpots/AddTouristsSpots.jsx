@@ -1,9 +1,10 @@
 import { useContext } from "react";
 import { AuthContext } from "../provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddTouristsSpots = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
+  // console.log(user);
   const handleAddForm = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -31,7 +32,7 @@ const AddTouristsSpots = () => {
       name: user?.displayName,
     };
 
-    console.log(tourist_spot_info);
+    // console.log(tourist_spot_info);
 
     fetch("http://localhost:5000/tourist-spots", {
       method: "POST",
@@ -42,9 +43,14 @@ const AddTouristsSpots = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         if (data.insertedId) {
-          alert("data successfully added");
+          Swal.fire({
+            title: "Successfully Added",
+            text: "Spots added successfully on the list",
+            icon: "success"
+          });
+          form.reset();
         }
       });
   };

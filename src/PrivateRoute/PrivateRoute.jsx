@@ -10,7 +10,7 @@ const PrivateRoute = ({ children }) => {
   if (loading) {
     return (
       <div className="flex justify-center my-20">
-        <GridLoader color="#36d7b7" />
+        <GridLoader color="#C40C0C" />
       </div>
     );
   }

@@ -7,6 +7,7 @@ import { useForm } from "react-hook-form";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { MdAlternateEmail, MdOutlineInsertPhoto } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
+import { toast } from "react-toastify";
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
@@ -32,7 +33,7 @@ const Register = () => {
       .then((res) => {
         // console.log(res.user);
         navigate("/");
-        alert("User create successfully");
+        toast.success("User create successfully");
         reset();
 
         // update profile
@@ -44,11 +45,11 @@ const Register = () => {
             console.log("profile updated");
           })
           .catch((err) => {
-            alert(err.message);
+            toast.error(err.message);
           });
       })
       .catch((err) => {
-        alert(err.message);
+        toast.error(err.message);
       });
   };
   return (
