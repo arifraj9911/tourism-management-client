@@ -20,9 +20,7 @@ const Country = () => {
     <div className="my-20 max-w-screen-xl mx-auto flex flex-col items-center">
       <h2 className="text-5xl mt-24 mb-5 font-bold ">Popular Destination</h2>
       <p className="w-3/5 mx-auto text-center text-[#999]">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-        praesentium impedit nostrum fuga distinctio a accusamus repellat enim
-        veritatis consequuntur.
+      Discover the allure of our highly sought-after destination, where culture, adventure, and relaxation converge to create unforgettable memories for travelers worldwide.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-20 gap-10">
         {countries.map((country) => (

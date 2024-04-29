@@ -6,9 +6,7 @@ const UsefulInformation = () => {
     <div className="mb-20 max-w-screen-xl px-5 mx-auto flex flex-col items-center">
       <h2 className="text-5xl mt-20 mb-5 font-bold ">Useful Information</h2>
       <p className="w-3/5 mx-auto text-center mb-20 text-[#999]">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis
-        praesentium impedit nostrum fuga distinctio a accusamus repellat enim
-        veritatis consequuntur.
+      Access valuable insights and advice to enhance your travel experience, covering everything from packing hacks to cultural etiquette, ensuring smooth and enjoyable journeys.
       </p>
       <div className="flex  gap-10">
         <div className=" w-5/6">

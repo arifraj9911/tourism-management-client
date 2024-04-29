@@ -61,9 +61,10 @@ const Banner = () => {
                   Let The Journey Begin
                 </h1>
                 <p className="mb-5 text-xs leading-4 lg:leading-6 lg:text-[16px] ">
-                  Indulge in the epitome of luxury with our exquisite
-                  apartments. From breathtaking views to opulent amenities, each
-                  residence exudes elegance and sophistication.
+                  With a heart full of anticipation and a mind ready for
+                  discovery, the journey began. Every step forward promised new
+                  experiences, each moment a chapter in the unfolding story of
+                  exploration and adventure.
                 </p>
               </div>
             </div>
@@ -84,12 +85,13 @@ const Banner = () => {
                 className="max-w-2xl px-2 lg:px-0"
               >
                 <h1 className="mb-2 lg:mb-10 w-full text-[28px] lg:text-6xl font-bold">
-                  Let The Journey Begin
+                  Dive into Unknown
                 </h1>
                 <p className="mb-5 text-xs leading-4 lg:leading-6 lg:text-[16px] ">
-                  Indulge in the epitome of luxury with our exquisite
-                  apartments. From breathtaking views to opulent amenities, each
-                  residence exudes elegance and sophistication.
+                  Delve into uncharted territories, where every step is an
+                  exploration and every moment holds the promise of discovery.
+                  Embark on an adventure of boundless possibilities and untold
+                  stories.
                 </p>
               </div>
             </div>
@@ -110,12 +112,12 @@ const Banner = () => {
                 className="max-w-2xl px-2 lg:px-0"
               >
                 <h1 className="mb-2 lg:mb-10 w-full text-[28px] lg:text-6xl font-bold">
-                  Let The Journey Begin
+                  Shake the Sunset
                 </h1>
                 <p className="mb-5 text-xs leading-4 lg:leading-6 lg:text-[16px] ">
-                  Indulge in the epitome of luxury with our exquisite
-                  apartments. From breathtaking views to opulent amenities, each
-                  residence exudes elegance and sophistication.
+                  Embrace the magic of dusk as you embark on a journey filled
+                  with rhythm and wonder. Dance to the beat of the setting sun,
+                  igniting your spirit with each vibrant step.
                 </p>
               </div>
             </div>
