@@ -30,7 +30,7 @@ const AllSpotCard = ({ spot }) => {
 
   return (
     <div>
-      <div className="card card-compact dark:bg-[#212121] rounded-none w-96 flex flex-col relative bg-base-100 shadow-xl">
+      <div className="card card-compact dark:bg-[#212121] rounded-none mx-2 md:mx-0 md:w-96 flex flex-col relative bg-base-100 shadow-xl">
         <figure className="h-[300px]">
           <img className="w-full h-full" src={image} alt="Shoes" />
         </figure>

@@ -23,8 +23,8 @@ const AllTouristsSpots = () => {
   return (
     <div className="dark:bg-[#121212] pb-20">
       <div className="max-w-screen-xl mx-auto dark:bg-[#121212] dark:text-[#dbdbdb] py-12">
-      <div className="flex items-center justify-between mt-10 mb-20">
-        <h2 className="text-4xl font-bold ">All Tourists Spots</h2>
+      <div className="flex flex-col md:flex-row gap-2 items-center justify-between mt-10 mb-20">
+        <h2 className="text-3xl md:text-4xl font-bold ">All Tourists Spots</h2>
         <div>
           <div className="dropdown dropdown-bottom flex justify-center  ">
             <div
