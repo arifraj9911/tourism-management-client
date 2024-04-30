@@ -20,7 +20,7 @@ export const router = createBrowserRouter([
         {
             path:'/',
             element:<Home></Home>,
-            loader:()=>fetch('http://localhost:5000/tourist-spots')
+            loader:()=>fetch('https://tourism-management-server-self.vercel.app/tourist-spots')
         },
         {
             path:'/login',
@@ -33,7 +33,7 @@ export const router = createBrowserRouter([
         {
             path:'/all-tourist-spot',
             element:<AllTouristsSpots></AllTouristsSpots>,
-            loader:()=>fetch('http://localhost:5000/tourist-spots')
+            loader:()=>fetch('https://tourism-management-server-self.vercel.app/tourist-spots')
         },
         {
             path:'/add-tourist-spot',
@@ -46,12 +46,12 @@ export const router = createBrowserRouter([
         {
             path:'/all-tourist-spot/:id',
             element:<PrivateRoute><SpotViewDetails></SpotViewDetails></PrivateRoute>,
-            loader:({params})=>fetch(`http://localhost:5000/tourist-spots/${params.id}`)
+            loader:({params})=>fetch(`https://tourism-management-server-self.vercel.app/tourist-spots/${params.id}`)
         },
         {
             path:'/country-spots/:country_name',
             element:<CountrySpot></CountrySpot>,
-            loader:({params})=>fetch(`http://localhost:5000/country/${params.country_name}`)
+            loader:({params})=>fetch(`https://tourism-management-server-self.vercel.app/country/${params.country_name}`)
         }
     ]
     }, 

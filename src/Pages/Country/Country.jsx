@@ -11,7 +11,7 @@ const Country = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/country")
+    fetch("https://tourism-management-server-self.vercel.app/country")
       .then((res) => res.json())
       .then((data) => setCountries(data));
   }, []);

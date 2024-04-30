@@ -24,7 +24,7 @@ const MyList = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/my-list/${id}`, {
+        fetch(`https://tourism-management-server-self.vercel.app/my-list/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -71,7 +71,7 @@ const MyList = () => {
 
     // console.log(tourist_spot_info);
 
-    fetch(`http://localhost:5000/my-list/${updateId}`, {
+    fetch(`https://tourism-management-server-self.vercel.app/my-list/${updateId}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -94,7 +94,7 @@ const MyList = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/my-list/${user?.email}`)
+    fetch(`https://tourism-management-server-self.vercel.app/my-list/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setTouristSpot(data));
   }, [user]);

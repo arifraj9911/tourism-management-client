@@ -23,7 +23,7 @@ const AllSpotCard = ({ spot }) => {
   const handleViewDetails = (id) => {
     // navigate(id);
 
-    fetch(`http://localhost:5000/tourist-spots/${id}`)
+    fetch(`https://tourism-management-server-self.vercel.app/tourist-spots/${id}`)
       .then((res) => res.json())
       .then((data) => console.log(data));
   };
