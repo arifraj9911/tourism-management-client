@@ -9,9 +9,9 @@ import { BsInstagram } from "react-icons/bs";
 const Footer = () => {
   const { user } = useContext(AuthContext);
   return (
-    <div>
-      <footer className="flex justify-between dark:bg-[#222222]  p-10 bg-base-200 text-base-content">
-        <aside className="w-1/5">
+    <div className="">
+      <footer className="flex flex-col md:flex-row gap-16 justify-between dark:bg-[#222222] py-10 px-5  md:px-10 md:py-20  bg-base-200 text-base-content">
+        <aside className="md:w-1/5">
           <h2 className=" ">
             <span className="text-3xl flex gap-0 font-bold">
               <span className="text-[#C40C0C] ">TRAVEL</span>
@@ -51,7 +51,7 @@ const Footer = () => {
             <FaStaylinked className="text-2xl text-[#5B51D8]" />
           </div>
         </nav>
-        <nav className="flex flex-col gap-2 w-1/4 text-[#999]">
+        <nav className="flex flex-col gap-2 md:w-1/4 text-[#999]">
           <h6 className="text-2xl mb-2 font-bold text-[#4f4f4f] dark:text-white">
             NewsLetter
           </h6>
@@ -60,7 +60,7 @@ const Footer = () => {
               type="email"
               name=""
               placeholder="Email"
-              className="input input-bordered bg-white border-none focus:outline-none text-black hover:bg-none  rounded-none"
+              className="input input-bordered bg-white border-none focus:outline-none text-black hover:bg-none rounded-none"
               id=""
             />
             {/* <button className="bg-[#C40C0C] text-white px-3 py-[12px] absolute top-0 right-10 ">Send</button> */}
@@ -71,13 +71,13 @@ const Footer = () => {
           <span className="text-sm">Get your early updates & more</span>
         </nav>
       </footer>
-      <footer className="footer footer-center p-4 dark:bg-[#181818]  bg-[#e7e7e7] ">
+      <footer className="footer footer-start md:footer-center p-4 dark:bg-[#181818]  bg-[#e7e7e7] ">
         <aside>
-          <p className="font-normal text-[#4f4f4f] dark:text-white text-[16px]">
+          <p className="font-normal text-[#4f4f4f] dark:text-white text-xs md:text-[16px]">
             Copyright © 2024 - All right reserved by Travel Tribe
           </p>
           <a
-            className="bg-[#35374B] px-3  py-2 rounded-md text-white absolute right-10"
+            className="bg-[#35374B] px-3  py-2 rounded-md text-white absolute mt-[-6px] md:mt-0 right-1 md:right-10"
             href="#"
           >
             <FaArrowUp />

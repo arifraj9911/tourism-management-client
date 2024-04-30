@@ -65,16 +65,16 @@ const Banner = () => {
             }}
           >
             <div className="hero-overlay bg-opacity-60"></div>
-            <div className="hero-content w-4/5 flex justify-center items-center  text-center text-white">
+            <div className="hero-content w-4/5 flex justify-center items-center  text-center text-white pt-14 md:pt-0">
               <div
                 data-aos="fade-right"
                 data-aos-duration="3000"
                 className="max-w-2xl px-2 lg:px-0"
               >
-                <h1 className="mb-2 lg:mb-10 w-full text-[28px] lg:text-6xl font-bold">
+                <h1 className="mb-2 lg:mb-10 w-full text-[22px] md:text-[28px] lg:text-6xl font-bold">
                   {sliderText1}
                 </h1>
-                <p className="mb-5 text-xs leading-4 lg:leading-6 lg:text-[16px] ">
+                <p className="mb-5 text-[10px] leading-4 lg:leading-6 lg:text-[16px] ">
                   With a heart full of anticipation and a mind ready for
                   discovery, the journey began. Every step forward promised new
                   experiences, each moment a chapter in the unfolding story of
@@ -92,16 +92,16 @@ const Banner = () => {
             }}
           >
             <div className="hero-overlay bg-opacity-60"></div>
-            <div className="hero-content w-4/5 flex justify-center items-center  text-center text-white">
+            <div className="hero-content w-4/5 pt-14 md:pt-0 flex justify-center items-center  text-center text-white">
               <div
                 data-aos="fade-right"
                 data-aos-duration="3000"
                 className="max-w-2xl px-2 lg:px-0"
               >
-                <h1 className="mb-2 lg:mb-10 w-full text-[28px] lg:text-6xl font-bold">
+                <h1 className="mb-2 lg:mb-10 w-full text-[22px] md:text-[28px] lg:text-6xl font-bold">
                   {sliderText2}
                 </h1>
-                <p className="mb-5 text-xs leading-4 lg:leading-6 lg:text-[16px] ">
+                <p className="mb-5 text-[10px] leading-4 lg:leading-6 lg:text-[16px] ">
                   Delve into uncharted territories, where every step is an
                   exploration and every moment holds the promise of discovery.
                   Embark on an adventure of boundless possibilities and untold
@@ -119,16 +119,16 @@ const Banner = () => {
             }}
           >
             <div className="hero-overlay bg-opacity-60"></div>
-            <div className="hero-content w-4/5 flex justify-center items-center  text-center text-white">
+            <div className="hero-content w-4/5 pt-14 md:pt-0 flex justify-center items-center  text-center text-white">
               <div
                 data-aos="fade-right"
                 data-aos-duration="3000"
                 className="max-w-2xl px-2 lg:px-0"
               >
-                <h1 className="mb-2 lg:mb-10 w-full text-[28px] lg:text-6xl font-bold">
+                <h1 className="mb-2 lg:mb-10 w-full text-[22px] md:text-[28px] lg:text-6xl font-bold">
                   {sliderText3}
                 </h1>
-                <p className="mb-5 text-xs leading-4 lg:leading-6 lg:text-[16px] ">
+                <p className="mb-5 text-[10px] leading-4 lg:leading-6 lg:text-[16px] ">
                   Embrace the magic of dusk as you embark on a journey filled
                   with rhythm and wonder. Dance to the beat of the setting sun,
                   igniting your spirit with each vibrant step.
@@ -138,7 +138,7 @@ const Banner = () => {
           </div>
         </SwiperSlide>
       </Swiper>
-      <div className="flex shadow-lg rounded-badge justify-center dark:bg-[#212121] dark:text-[#dbdbdb] dark:border-none bg-white items-center z-10 absolute bottom-[-60px] right-36 gap-8 border w-4/5 px-5 py-6 mx-auto">
+      <div className="md:flex shadow-lg rounded-badge justify-center dark:bg-[#212121] dark:text-[#dbdbdb] dark:border-none bg-white items-center z-10 absolute bottom-[-60px] right-36 gap-8 border w-4/5 px-5 py-6 mx-auto hidden ">
         <div className=" flex items-center gap-4 border-r-2 pr-6">
           <IoLocationOutline className="text-2xl text-[#94999f]" />
           <div className="flex flex-col justify-center items-start">
@@ -207,7 +207,9 @@ const Banner = () => {
         </div>
         <div className=" flex items-center gap-2">
           <IoIosSearch className="text-xl mt-1 text-[#94999f] dark:text-[#dbdbdb]" />
-          <button className="text-xl text-[#484a4e] dark:text-[#dbdbdb]">Search</button>
+          <button className="text-xl text-[#484a4e] dark:text-[#dbdbdb]">
+            Search
+          </button>
         </div>
       </div>
     </div>

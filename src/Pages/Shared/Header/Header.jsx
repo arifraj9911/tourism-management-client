@@ -49,8 +49,8 @@ const Header = () => {
     <>
       {/* navbar top */}
       <div className="dark:bg-[#121212]">
-        <div className="navbar py-0 bg-base-100 max-w-screen-xl dark:bg-[#121212] dark:text-white  mx-auto ">
-          <div className="flex-1 gap-10 text-[#94999f] dark:text-[#dbdbdb] ">
+        <div className="navbar py-0 bg-base-100 max-w-screen-xl dark:bg-[#121212] dark:text-white px-3 md:px-0 mx-auto ">
+          <div className="flex-1 flex-col items-start md:flex-row gap-1 md:gap-10 text-xs md:text-sm text-[#94999f] dark:text-[#dbdbdb] ">
             <div className="flex gap-1 items-center">
               <IoCallOutline />
               <span>+8897-32438-53</span>
@@ -63,7 +63,7 @@ const Header = () => {
           <div className="flex-none ">
             {/* dark/light theme */}
             <button
-              className="pr-8  border-r-2"
+              className="pr-8 hidden md:flex border-r-2"
               onClick={() => darkModeHandler()}
             >
               {dark && <IoSunny className="text-2xl" />}
@@ -78,7 +78,7 @@ const Header = () => {
                       logOut();
                       navigate("/login");
                     }}
-                    className=" text-[16px] font-bold flex gap-1 items-center"
+                    className=" text-[16px] flex font-bold  gap-1 items-center"
                   >
                     <CiLogout />
                     <span> Sign Out</span>
@@ -100,16 +100,16 @@ const Header = () => {
                   )}{" "}
                 </span>
               ) : (
-                <div className="flex gap-6">
+                <div className="flex gap-3 md:gap-6">
                   <Link
-                    className=" text-[16px] font-bold flex gap-1 items-center"
+                    className="text-sm md:text-[16px] font-bold flex gap-1 items-center"
                     to="/login"
                   >
                     <IoIosLogIn />
                     <span>Login</span>
                   </Link>
                   <Link
-                    className=" text-[16px] font-bold flex gap-1 items-center"
+                    className="text-sm md:text-[16px] font-bold flex gap-1 items-center"
                     to="/register"
                   >
                     <SiGnuprivacyguard />
@@ -123,10 +123,14 @@ const Header = () => {
       </div>
       <hr />
       {/* navbar bottom */}
-      <div className="navbar py-5 px-20 bg-white dark:bg-[#212121] dark:text-white sticky top-0 z-10">
+      <div className="navbar py-5 lg:px-20 bg-white dark:bg-[#212121] dark:text-white sticky top-0 z-10">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost p-0 lg:hidden"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -144,12 +148,16 @@ const Header = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+              className="menu menu-sm dropdown-content dark:bg-[#121212] active:bg-white dark:border-none mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               {menu}
+            
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost gap-0 text-3xl font-bold">
+          <Link
+            to="/"
+            className="btn btn-ghost gap-0 pl-1 text-2xl md:text-3xl font-bold"
+          >
             <span className="text-[#C40C0C]">TRAVEL</span>TRIBE
           </Link>
         </div>
@@ -157,6 +165,16 @@ const Header = () => {
           <ul className="flex items-center gap-10 px-4 text-[#94999f] text-[18px] font-semibold">
             {menu}
           </ul>
+        </div>
+        <div className="navbar-end flex md:hidden">
+           {/* dark/light theme */}
+           <button
+              className="pr-2 md:pr-8 flex md:hidden md:border-r-2"
+              onClick={() => darkModeHandler()}
+            >
+              {dark && <IoSunny className="text-2xl" />}
+              {!dark && <IoMoon className="text-2xl" />}
+            </button>
         </div>
         {/* <div className="navbar-end">
           

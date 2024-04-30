@@ -5,15 +5,15 @@
     font-size: 12px;
     color: white;
     border-radius: 3px;
-    border: 1px solid rgb(180, 180, 180);
+    /* border: 1px solid rgb(180, 180, 180); */
 }
 .swiper-button-next::after,.swiper-button-prev::after{
-    font-size: 20px;
+    font-size: 40px;
     font-weight: 500;
     
 }
 .swiper-button-next:hover,.swiper-button-prev:hover{
-    background-color: #77c720;
+    /* background-color: #77c720; */
     color: white;
     transition: 0.2s ease all;
 }
