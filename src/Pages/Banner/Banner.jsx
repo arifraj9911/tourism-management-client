@@ -138,9 +138,10 @@ const Banner = () => {
           </div>
         </SwiperSlide>
       </Swiper>
-      <div className="md:flex shadow-lg rounded-badge justify-center dark:bg-[#212121] dark:text-[#dbdbdb] dark:border-none bg-white items-center z-10 absolute bottom-[-60px] right-36 gap-8 border w-4/5 px-5 py-6 mx-auto hidden ">
+      <div className="md:flex  shadow-lg rounded-badge justify-center dark:bg-[#212121] dark:text-[#dbdbdb] dark:border-none bg-white items-center z-10 absolute lg:bottom-[-60px] bottom-[-30px] lg:right-36 gap-8 border w-full  lg:w-4/5 px-3 lg:px-5 py-4 lg:py-6 lg:mx-auto  ">
+        <div className="hidden md:flex gap-4 justify-between ">
         <div className=" flex items-center gap-4 border-r-2 pr-6">
-          <IoLocationOutline className="text-2xl text-[#94999f]" />
+          <IoLocationOutline className="text-lg lg:text-2xl text-[#94999f]" />
           <div className="flex flex-col justify-center items-start">
             <span className="text-xl font-semibold">Destination</span>
             <select
@@ -157,7 +158,7 @@ const Banner = () => {
             </select>
           </div>
         </div>
-        <div className=" flex items-center gap-4 border-r-2 pr-6">
+        <div className="hidden lg:flex items-center gap-4 border-r-2 pr-6">
           <IoMdTime className="text-2xl text-[#94999f]" />
           <div className="flex flex-col  items-start">
             <span className="text-xl font-semibold">Duration</span>
@@ -173,15 +174,16 @@ const Banner = () => {
             </select>
           </div>
         </div>
+        </div>
         <div className="flex items-center gap-6">
-          <div className=" flex items-center gap-4">
-            <TbCalendarShare className="text-2xl text-[#94999f]" />
+          <div className=" flex items-center gap-1 md:gap-4">
+            <TbCalendarShare className="text-lg md:text-2xl md:flex hidden text-[#94999f]" />
             <div className="flex flex-col justify-center items-start">
-              <span className="text-xl font-semibold">Check In</span>
+              <span className="text-[16px] md:text-xl font-semibold">Check In</span>
 
               <div>
                 <DatePicker
-                  className=""
+                  className="text-xs md:text-[16px]"
                   onChange={onChangeCheckIn}
                   value={valueCheckIn}
                 />
@@ -189,15 +191,15 @@ const Banner = () => {
             </div>
           </div>
           <div>
-            <IoMdArrowForward className="text-xl" />
+            <IoMdArrowForward className="md:flex hidden text-xl" />
           </div>
-          <div className=" flex items-center gap-4 border-r-2 pr-8">
-            <TbCalendarX className="text-2xl text-[#94999f]" />
+          <div className=" flex items-center gap-1 md:gap-4 lg:border-r-2 pr-8">
+            <TbCalendarX className="text-lg md:text-2xl md:flex hidden text-[#94999f]" />
             <div className="flex flex-col justify-center items-start">
-              <span className="text-xl font-semibold">Check Out</span>
-              <div>
+              <span className="text-[16px] md:text-xl font-semibold">Check Out</span>
+              <div className="">
                 <DatePicker
-                  className=""
+                  className="text-xs md:text-[16px]"
                   onChange={onChangeCheckOut}
                   value={valueCheckIOut}
                 />
@@ -205,7 +207,7 @@ const Banner = () => {
             </div>
           </div>
         </div>
-        <div className=" flex items-center gap-2">
+        <div className=" hidden lg:flex items-center gap-2">
           <IoIosSearch className="text-xl mt-1 text-[#94999f] dark:text-[#dbdbdb]" />
           <button className="text-xl text-[#484a4e] dark:text-[#dbdbdb]">
             Search

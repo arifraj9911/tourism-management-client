@@ -10,7 +10,7 @@ const Footer = () => {
   const { user } = useContext(AuthContext);
   return (
     <div className="">
-      <footer className="flex flex-col md:flex-row gap-16 justify-between dark:bg-[#222222] py-10 px-5  md:px-10 md:py-20  bg-base-200 text-base-content">
+      <footer className="flex flex-col lg:flex-row gap-16 justify-between dark:bg-[#222222] py-10 px-5  md:px-10 md:py-20  bg-base-200 text-base-content">
         <aside className="md:w-1/5">
           <h2 className=" ">
             <span className="text-3xl flex gap-0 font-bold">
@@ -51,7 +51,7 @@ const Footer = () => {
             <FaStaylinked className="text-2xl text-[#5B51D8]" />
           </div>
         </nav>
-        <nav className="flex flex-col gap-2 md:w-1/4 text-[#999]">
+        <nav className="flex flex-col gap-2 lg:w-1/4 text-[#999]  ">
           <h6 className="text-2xl mb-2 font-bold text-[#4f4f4f] dark:text-white">
             NewsLetter
           </h6>

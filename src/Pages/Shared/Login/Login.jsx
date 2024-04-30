@@ -63,7 +63,7 @@ const Login = () => {
   return (
     <div className="dark:bg-[#121212] dark:text-[#dbdbdb]">
       <div className="flex justify-center items-center  ">
-        <div className="w-full md:w-3/5 lg:w-2/6  border dark:bg-[#212121] dark:border-[#212121]  p-10 mt-16">
+        <div className="w-full md:w-3/5 lg:w-2/6 mx-2 md:mx-0 border dark:bg-[#212121] dark:border-[#212121]  p-10 mt-16">
           <h2 className="text-3xl lg:text-4xl mb-8 text-center font-normal">
             Login
           </h2>

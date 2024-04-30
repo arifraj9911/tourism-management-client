@@ -40,7 +40,7 @@ const AllTouristsSpots = () => {
             </div>
             <ul
               tabIndex={0}
-              className="dropdown-content z-[1] dark:bg-[#212121] menu p-2 shadow bg-base-100 rounded-box w-52"
+              className="dropdown-content z-[1] dark:bg-[#212121] menu p-2 shadow bg-base-100 rounded-box w-52 "
             >
               <li onClick={() => handleSortAscending(1)}>
                 <a>Avg Cost(ascending)</a>
@@ -52,7 +52,7 @@ const AllTouristsSpots = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-x-2 md:gap-y-10 lg:gap-10">
         {allTourist.map((spot) => (
           <AllSpotCard
             key={spot._id}

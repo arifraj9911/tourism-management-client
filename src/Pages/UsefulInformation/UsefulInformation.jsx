@@ -7,12 +7,12 @@ const UsefulInformation = () => {
       <h2 className="text-3xl md:text-5xl mt-20 mb-5 font-bold ">
         Useful Information
       </h2>
-      <p className="md:w-3/5 mx-auto text-sm md:text-[16px] text-center mb-20 text-[#999]">
+      <p className="lg:w-3/5 mx-auto text-sm md:text-[16px] text-center mb-20 text-[#999]">
         Access valuable insights and advice to enhance your travel experience,
         covering everything from packing hacks to cultural etiquette, ensuring
         smooth and enjoyable journeys.
       </p>
-      <div className="flex flex-col-reverse md:flex-row gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 justify-center lg:grid-cols-3 gap-10 md:gap-x-2 md:gap-y-10 ">
         <div className=" md:w-5/6">
           <img className="w-full" src={guide} alt="" />
           <h2 className="text-xl md:text-2xl mt-4 mb-2 font-semibold">
@@ -36,7 +36,7 @@ const UsefulInformation = () => {
           </p>
         </div>
         {/* accordion */}
-        <div className=" w-full">
+        <div className=" w-full md:col-span-2 lg:col-auto">
           <div className="join join-vertical  rounded-none">
             <div className="collapse collapse-arrow join-item border border-r-0 border-t-0 border-l-0">
               <input type="radio" name="my-accordion-4" defaultChecked />

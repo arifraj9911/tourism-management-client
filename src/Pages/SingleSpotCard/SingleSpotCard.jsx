@@ -19,7 +19,7 @@ const SingleSpotCard = ({ spots }) => {
     description,
   } = spots;
   return (
-    <div className="card rounded-none mx-2 md:mx-0 md:w-96 dark:bg-[#212121] bg-base-100 flex flex-col relative shadow-xl">
+    <div className="card rounded-none mx-2 lg:mx-0 lg:w-96 dark:bg-[#212121] bg-base-100 flex flex-col relative shadow-xl">
       <figure className="h-[300px]">
         <img className="w-full h-full" src={image} alt="Shoes" />
       </figure>

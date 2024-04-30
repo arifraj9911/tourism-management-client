@@ -14,7 +14,7 @@ const CountrySpot = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {countryData.map((country) => (
             <div key={country._id}>
-              <div className="card card-compact dark:bg-[#212121] rounded-none mx-2 md:mx-0 md:w-96 flex flex-col relative bg-base-100 shadow-xl">
+              <div className="card card-compact dark:bg-[#212121] rounded-none mx-2 lg:mx-0 lg:w-96 flex flex-col relative bg-base-100 shadow-xl">
                 <figure className="h-[300px]">
                   <img
                     className="w-full h-full"

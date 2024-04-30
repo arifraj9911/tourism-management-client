@@ -54,7 +54,7 @@ const Register = () => {
   };
   return (
     <div className="flex justify-center items-center dark:bg-[#121212] dark:text-[#dbdbdb]">
-      <div className="w-full md:w-3/5 lg:w-2/6 border dark:bg-[#212121] dark:border-none p-10 my-16">
+      <div className="w-full md:w-3/5 lg:w-2/6 mx-2 md:mx-0 border dark:bg-[#212121] dark:border-none p-10 my-16">
         <h2 className="text-3xl lg:text-4xl mb-6 text-center font-normal">
           Create Account
         </h2>

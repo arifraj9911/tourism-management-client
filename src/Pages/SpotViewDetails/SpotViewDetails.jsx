@@ -21,8 +21,8 @@ const SpotViewDetails = () => {
   return (
     <div className="dark:bg-[#121212] dark:text-[#dbdbdb]">
       <div className="max-w-screen-xl  mx-auto py-20">
-        <div className="flex flex-col md:flex-row gap-10 mx-2 md:mx-0">
-          <div className="md:w-2/5 relative">
+        <div className="flex flex-col lg:flex-row gap-10 mx-2 lg:mx-0">
+          <div className="lg:w-2/5 relative">
             <img
               className="w-full h-[350px] md:h-[500px] rounded-lg"
               src={image}
@@ -32,7 +32,7 @@ const SpotViewDetails = () => {
               {country_name}
             </span>
           </div>
-          <div className="md:w-3/5">
+          <div className="lg:w-3/5">
             <div className="flex items-center gap-1 text-lg text-[#999]">
               <CiLocationOn />
               <span>{location}</span>

@@ -49,7 +49,7 @@ const Header = () => {
     <>
       {/* navbar top */}
       <div className="dark:bg-[#121212]">
-        <div className="navbar py-0 bg-base-100 max-w-screen-xl dark:bg-[#121212] dark:text-white px-3 md:px-0 mx-auto ">
+        <div className="navbar py-0 bg-base-100 max-w-screen-xl dark:bg-[#121212] dark:text-white px-3 lg:px-0 mx-auto ">
           <div className="flex-1 flex-col items-start md:flex-row gap-1 md:gap-10 text-xs md:text-sm text-[#94999f] dark:text-[#dbdbdb] ">
             <div className="flex gap-1 items-center">
               <IoCallOutline />
@@ -63,7 +63,7 @@ const Header = () => {
           <div className="flex-none ">
             {/* dark/light theme */}
             <button
-              className="pr-8 hidden md:flex border-r-2"
+              className="pr-8 hidden lg:flex border-r-2"
               onClick={() => darkModeHandler()}
             >
               {dark && <IoSunny className="text-2xl" />}
@@ -72,7 +72,7 @@ const Header = () => {
             {/* button */}
             <div className="pl-8 text-[#94999f] dark:text-[#dbdbdb]">
               {user ? (
-                <span className="flex items-center gap-3 lg:gap-6">
+                <span className="flex items-center gap-3 md:gap-6">
                   <button
                     onClick={() => {
                       logOut();
@@ -151,7 +151,6 @@ const Header = () => {
               className="menu menu-sm dropdown-content dark:bg-[#121212] active:bg-white dark:border-none mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
             >
               {menu}
-            
             </ul>
           </div>
           <Link
@@ -166,15 +165,15 @@ const Header = () => {
             {menu}
           </ul>
         </div>
-        <div className="navbar-end flex md:hidden">
-           {/* dark/light theme */}
-           <button
-              className="pr-2 md:pr-8 flex md:hidden md:border-r-2"
-              onClick={() => darkModeHandler()}
-            >
-              {dark && <IoSunny className="text-2xl" />}
-              {!dark && <IoMoon className="text-2xl" />}
-            </button>
+        <div className="navbar-end flex lg:hidden">
+          {/* dark/light theme */}
+          <button
+            className="pr-2 lg:pr-8 flex lg:hidden lg:border-r-2"
+            onClick={() => darkModeHandler()}
+          >
+            {dark && <IoSunny className="text-2xl" />}
+            {!dark && <IoMoon className="text-2xl" />}
+          </button>
         </div>
         {/* <div className="navbar-end">
           
